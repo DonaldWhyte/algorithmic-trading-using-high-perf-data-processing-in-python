@@ -1,8 +1,8 @@
-# High Performance Data Processing in Python
+# High Performance Data Processing in Python V2.0
 
-### [View Presentation Slides](http://donaldwhyte.github.io/high-performance-data-processing-in-python)
+### [View Presentation Slides](http://donaldwhyte.github.io/high-performance-data-processing-in-python-v2)
 
-Talk demonstrating how to massively optimise data processing and numerical computation in Python. We perform outlier detection on a large time-series weather dataset ([ISD](https://www.ncdc.noaa.gov/isd)). We take detecting outliers in 600GBs worth of data in Python down from 28 days to 38 minutes.
+Talk demonstrating how to massively optimise data processing and numerical computation in Python. We build an automated US stock trading strategy using stock pricing data for 7000 stocks. We take running historical simulations of this strategy from one month to less than an hour.
 
 Topics covered:
 
@@ -11,7 +11,6 @@ Topics covered:
 * fast numerical processing in `numpy`
 * vectorisation
 * using `numba` to optimise non-vectorised code
-* parallelising computation using `joblib`
 
 ## Running Presentation
 
