@@ -71,7 +71,7 @@ Deployment, logging, profiling and monitoring.
 
 [NEXT]
 <!-- .slide: data-background="images/intro_background.png" class="background" -->
-## Python's Strength
+## Python's Strengths
 Python suitable for **both use cases**.
 
 Enables researchers to run experiments quickly.
@@ -94,7 +94,7 @@ But...
 
 [NEXT]
 <!-- .slide: data-background="images/intro_background.png" class="background" -->
-### Python vs. C Performance
+## Python vs. C Performance
 <div id="python-vs-c-speedups"></div>
 
 <div class="source">
@@ -154,22 +154,71 @@ Foundation of most scientific computing packages.
 
 [NEXT]
 <!-- .slide: data-background="images/intro_background.png" class="background" -->
-## Our Focus
+# Our Focus
 
+[NEXT]
+<!-- .slide: data-background="images/intro_background.png" class="background large-slide" -->
 Showing how to use NumPy to process numerical data.
 
+[NEXT]
+<!-- .slide: data-background="images/intro_background.png" class="background large-slide" -->
 Exploring how NumPy uses vectorisation to dramatically boost performance.
 
-While still keeping Python productive.
+[NEXT]
+<!-- .slide: data-background="images/intro_background.png" class="background large-slide" -->
+While keeping the productivity
+
+Python gives us.
 
 [NEXT]
 <!-- .slide: data-background="images/intro_background.png" class="background" -->
-## Outline
+# Outline
+<ul>
+  <li class="hidden">Build algo trading strategy using stock price data</li>
+  <li class="hidden">Process stock price data in pure Python</li>
+  <li class="hidden">Speed up processing using NumPy and vectorisation</li>
+  <li class="hidden">Speed up processing even more using Numba</li>
+</ul>
 
-1. Build algo trading strategy using stock price data
-2. Process stock price data in **pure Python**
-3. Speed up processing using **NumPy** and vectorisation
-4. Speed up processing even more using **Numba**
+[NEXT]
+<!-- .slide: data-background="images/intro_background.png" class="background" -->
+# Outline
+<ul>
+  <li class="focus">Build algo trading strategy using stock price data</li>
+  <li class="hidden">Process stock price data in pure Python</li>
+  <li class="hidden">Speed up processing using NumPy and vectorisation</li>
+  <li class="hidden">Speed up processing even more using Numba</li>
+</ul>
+
+[NEXT]
+<!-- .slide: data-background="images/intro_background.png" class="background" -->
+# Outline
+<ul>
+  <li class="crossed">Build algo trading strategy using stock price data</li>
+  <li class="focus">Process stock price data in pure Python</li>
+  <li class="hidden">Speed up processing using NumPy and vectorisation</li>
+  <li class="hidden">Speed up processing even more using Numba</li>
+</ul>
+
+[NEXT]
+<!-- .slide: data-background="images/intro_background.png" class="background" -->
+# Outline
+<ul>
+  <li class="crossed">Build algo trading strategy using stock price data</li>
+  <li class="crossed">Process stock price data in pure Python</li>
+  <li class="focus">Speed up processing using NumPy and vectorisation</li>
+  <li class="hidden">Speed up processing even more using Numba</li>
+</ul>
+
+[NEXT]
+<!-- .slide: data-background="images/intro_background.png" class="background" -->
+# Outline
+<ul>
+  <li class="crossed">Build algo trading strategy using stock price data</li>
+  <li class="crossed">Process stock price data in pure Python</li>
+  <li class="crossed">Speed up processing using NumPy and vectorisation</li>
+  <li class="focus">Speed up processing even more using Numba</li>
+</ul>
 
 [NEXT]
 <!-- .slide: data-background="images/intro_background.png" class="background large-slide" -->
@@ -192,6 +241,10 @@ TIME times faster than pure Python.
   ![quant](images/quant.jpg)
 </div>
 <div class="clear-col"></div>
+
+[NEXT]
+![trader](images/trader.jpg)
+
 
 [NEXT]
 # The Data
@@ -444,12 +497,13 @@ Avoid losing money during **momentum** price movements.
 Adjusting returns using stock correlations is the **hardest** step.
 
 [NEXT]
-<!-- .slide: class="medium-slide" -->
-Typically involves two stats techniques:
+## Methods for Adjusting Returns
 
-* Principal Component Analysis (PCA)
-* Linear Regression
+![stats_techniques_for_stat_arb](images/stats_techniques_for_stat_arb.svg)
 
+[NEXT]
+## Not Going Into Detail!
+![stats_techniques_for_stat_arb](images/stats_techniques_for_stat_arb_crossed.svg)
 
 [NEXT SECTION]
 ## 2. Pure Python Implementation
@@ -1017,7 +1071,7 @@ Stock's relative daily return (in USD) on day _t_ is:
 | **Date**   | **AAPL Stock Price** |
 | ---------- | -------------------- |
 | 2017-08-01 | 148.92               |
-| 2017-08-02 | 155.97               | 
+| 2017-08-02 | 155.97               |
 
 <div>
   **What is AAPL's return at end of 2017-08-02?**
@@ -1203,7 +1257,7 @@ price_matrix = np.zeros(shape=(num_dates_in_sim,
 shifted_prices = np.roll(price_matrix, shift=1, axis=0)
 shifted_prices[:1, :] = np.nan
 returns = (price_matrix - shifted_prices)
-          / shifted_prices  
+          / shifted_prices
 </code></pre>
 
 [NEXT]
@@ -1217,7 +1271,7 @@ returns = (price_matrix - shifted_prices)
 shifted_prices = np.roll(price_matrix, shift=1, axis=0)
 shifted_prices[:1, :] = np.nan
 returns = (price_matrix - shifted_prices)
-          / shifted_prices  
+          / shifted_prices
 </code></pre>
 
 [NEXT]
@@ -1231,7 +1285,7 @@ price_matrix = np.zeros(shape=(num_dates_in_sim,
 shifted_prices = np.roll(price_matrix, shift=1, axis=0)
 shifted_prices[:1, :] = np.nan
 returns = (price_matrix - shifted_prices)
-          / shifted_prices  
+          / shifted_prices
 </code></pre>
 
 [NEXT]
@@ -1245,7 +1299,7 @@ price_matrix = np.zeros(shape=(num_dates_in_sim,
 <mark>shifted_prices = np.roll(price_matrix, shift=1, axis=0)</mark>
 <mark>shifted_prices[:1, :] = np.nan</mark>
 returns = (price_matrix - shifted_prices)
-          / shifted_prices  
+          / shifted_prices
 </code></pre>
 
 [NEXT]

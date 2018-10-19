@@ -215,7 +215,7 @@ code .highlighted {
 }
 
 li.hidden {
-    color: white !important;
+    color: rgba(0, 0, 0, 0) !important;
 }
 
 li.focus {
@@ -346,6 +346,10 @@ img[alt="price_momentum"] {
 
 img[alt="subtracting_market_impact_full"] {
     width: 650px;
+}
+
+img[alt="stats_techniques_for_stat_arb"] {
+    margin-top: 32px !important;
 }
 
 img[alt="one_day_holding"] {
