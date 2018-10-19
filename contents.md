@@ -12,7 +12,6 @@
 </div>
 
 [NEXT]
-<!-- .slide: data-background="images/intro_background.png" class="background" -->
 ### About Me
 
 <div class="left-col">
@@ -30,11 +29,10 @@
 <div class="clear-col"></div>
 
 [NEXT]
-<!-- .slide: data-background="images/intro_background.png" class="background" -->
+<!-- .slide: class="large-slide" -->
 **Python is a hugely popular tool for data analysis.**
 
 [NEXT]
-<!-- .slide: data-background="images/intro_background.png" class="background" -->
 
 > **Data analysis is now as popular as web development with Python.**
 
@@ -46,11 +44,9 @@ _note_
 https://www.jetbrains.com/research/python-developers-survey-2017/
 
 [NEXT]
-<!-- .slide: data-background="images/intro_background.png" class="background" -->
-## Why?
+# Why?
 
 [NEXT]
-<!-- .slide: data-background="images/intro_background.png" class="background" -->
 ## Suitable for **Research**
 
 High-level and easy to use.
@@ -60,7 +56,6 @@ Doesn't require advanced programming knowledge.
 Enables researchers to iterate on ideas quickly.
 
 [NEXT]
-<!-- .slide: data-background="images/intro_background.png" class="background" -->
 ## Suitable for **Production**
 
 General-purpose language useful outside of data analysis.
@@ -70,30 +65,26 @@ Huge ecosystem of packages for deploying prod systems.
 Deployment, logging, profiling and monitoring.
 
 [NEXT]
-<!-- .slide: data-background="images/intro_background.png" class="background" -->
 ## Python's Strengths
 Python suitable for **both use cases**.
 
 Enables researchers to run experiments quickly.
 
-Good tools for building prod-ready systems.
+Great tools for building prod-ready systems.
 
 [NEXT]
-<!-- .slide: data-background="images/intro_background.png" class="background large-slide" -->
+<!-- .slide: class="large-slide" -->
 We want to use the same code
 
 for prod **and** research!
 
 [NEXT]
-<!-- .slide: data-background="images/intro_background.png" class="background large-slide" -->
-But...
+# But...
 
 [NEXT]
-<!-- .slide: data-background="images/intro_background.png" class="background large-slide" -->
-**Pure Python is slow.**
+## Pure Python is slow!
 
 [NEXT]
-<!-- .slide: data-background="images/intro_background.png" class="background" -->
 ## Python vs. C Performance
 <div id="python-vs-c-speedups"></div>
 
@@ -104,19 +95,19 @@ But...
 </div>
 
 [NEXT]
-<!-- .slide: data-background="images/intro_background.png" class="background large-slide" -->
+<!-- .slide: class="large-slide" -->
 # Bad for Research
 
 Very slow experimentation cycles.
 
 [NEXT]
-<!-- .slide: data-background="images/intro_background.png" class="background large-slide" -->
+<!-- .slide: class="large-slide" -->
 # Bad for Production
 
 Cannot run time-sensitive data processing or computational tasks.
 
 [NEXT]
-<!-- .slide: data-background="images/intro_background.png" class="background large-slide" -->
+<!-- .slide: class="large-slide" -->
 # Solution
 Python's data processing ecosystem.
 
@@ -127,7 +118,6 @@ Python's data processing ecosystem.
 <!-- .slide: data-background="images/ecosystem_marked.png" -->
 
 [NEXT]
-<!-- .slide: data-background="images/intro_background.png" class="background" -->
 ## NumPy
 
 <div class="left-col">
@@ -144,7 +134,6 @@ Python's data processing ecosystem.
 <div class="clear-col"></div>
 
 [NEXT]
-<!-- .slide: data-background="images/intro_background.png" class="background" -->
 Foundation of most scientific computing packages.
 
 ![scipy](images/scipy.svg)
@@ -153,85 +142,88 @@ Foundation of most scientific computing packages.
 ![matplotlib](images/matplotlib.svg)
 
 [NEXT]
-<!-- .slide: data-background="images/intro_background.png" class="background" -->
 # Our Focus
 
 [NEXT]
-<!-- .slide: data-background="images/intro_background.png" class="background large-slide" -->
+<!-- .slide: class="large-slide" -->
 Showing how to use NumPy to process numerical data.
 
 [NEXT]
-<!-- .slide: data-background="images/intro_background.png" class="background large-slide" -->
+<!-- .slide: class="large-slide" -->
 Exploring how NumPy uses vectorisation to dramatically boost performance.
 
 [NEXT]
-<!-- .slide: data-background="images/intro_background.png" class="background large-slide" -->
+<!-- .slide: class="large-slide" -->
 While keeping the productivity
 
 Python gives us.
 
 [NEXT]
-<!-- .slide: data-background="images/intro_background.png" class="background" -->
 # Outline
-<ul>
+<ol>
   <li class="hidden">Build algo trading strategy using stock price data</li>
   <li class="hidden">Process stock price data in pure Python</li>
   <li class="hidden">Speed up processing using NumPy and vectorisation</li>
   <li class="hidden">Speed up processing even more using Numba</li>
-</ul>
+</ol>
 
 [NEXT]
-<!-- .slide: data-background="images/intro_background.png" class="background" -->
 # Outline
-<ul>
+<ol>
   <li class="focus">Build algo trading strategy using stock price data</li>
   <li class="hidden">Process stock price data in pure Python</li>
   <li class="hidden">Speed up processing using NumPy and vectorisation</li>
   <li class="hidden">Speed up processing even more using Numba</li>
-</ul>
+</ol>
 
 [NEXT]
-<!-- .slide: data-background="images/intro_background.png" class="background" -->
 # Outline
-<ul>
+<ol>
   <li class="crossed">Build algo trading strategy using stock price data</li>
   <li class="focus">Process stock price data in pure Python</li>
   <li class="hidden">Speed up processing using NumPy and vectorisation</li>
   <li class="hidden">Speed up processing even more using Numba</li>
-</ul>
+</ol>
 
 [NEXT]
-<!-- .slide: data-background="images/intro_background.png" class="background" -->
 # Outline
-<ul>
+<ol>
   <li class="crossed">Build algo trading strategy using stock price data</li>
   <li class="crossed">Process stock price data in pure Python</li>
   <li class="focus">Speed up processing using NumPy and vectorisation</li>
   <li class="hidden">Speed up processing even more using Numba</li>
-</ul>
+</ol>
 
 [NEXT]
-<!-- .slide: data-background="images/intro_background.png" class="background" -->
 # Outline
-<ul>
+<ol>
   <li class="crossed">Build algo trading strategy using stock price data</li>
   <li class="crossed">Process stock price data in pure Python</li>
   <li class="crossed">Speed up processing using NumPy and vectorisation</li>
   <li class="focus">Speed up processing even more using Numba</li>
-</ul>
+</ol>
 
 [NEXT]
-<!-- .slide: data-background="images/intro_background.png" class="background large-slide" -->
+<!-- .slide: class="large-slide" -->
 ## Final Optimised Solution
 
 TIME times faster than pure Python.
 
 
 [NEXT SECTION]
-## 1. Let's Make Some Cash
+## 1. The Problem
 ![upward_trend](images/upward_trend.svg)
 
 [NEXT]
+<!-- .slide: class="large-slide" -->
+Let's make some cash!
+
+[NEXT]
+# Bob
+![quant](images/quant.jpg)
+
+[NEXT]
+
 <div class="left-col" style="text-center: left">
   <br />
   <p>Use our programmer skills to make money...</p>
@@ -299,22 +291,16 @@ We leverage **two fundamental behaviours** about stock prices.
 ![reversion_example_aapl](images/reversion_example_aapl_price.svg)
 
 [NEXT]
-## Stock's Absolute Daily Return
+<!-- .slide: class="large-slide" -->
+# Stock's Daily Return
+Represents change in stock price.
 
-<div>
-Stock's price is:
+[NEXT]
+<!-- .slide: class="large-slide" -->
+# Stock's Daily Return
+Equation:
 
-![equation](images/equation_stockprice.svg)
-</div> <!-- .element: class="fragment" data-fragment-index="0" -->
-
-<div>
-Stock's absolute daily return (in USD) on day _t_ is:
-
-![equation](images/equation_absolute_returns.svg)
-</div> <!-- .element: class="fragment" data-fragment-index="1" -->
-
-_note_
-equation is today's price - yesterday's price / yesterday's price
+<code style="font-size: 50px">price_today - price_yesterday</code>
 
 [NEXT]
 ![reversion_example_aapl](images/reversion_example_aapl_abs_return.svg)
@@ -433,7 +419,7 @@ What if the price **doesn't** revert back to the mean?
 
 [NEXT]
 <!-- .slide: class="large-slide" -->
-Mean reversion strategy **loses money** if prices keep climbing or falling!
+Mean reversion strategy **loses money** if a stock keeps climbing/falling at accelerating speeds!
 
 _note_
 Segway into correlation...what if it doesn't revert? Stocks might go down for
@@ -454,23 +440,17 @@ Avoid this problem by considering **stock correlation** in trading decisions.
 ![price_correlation](images/positive_corr_prices.svg)
 
 [NEXT]
-### Correation with a Stock
-#### Apple <->  AngloGold
-![price_correlation](images/negative_corr_prices.svg)
-
-_note_
-AngloGold Ashanti is a gold mining company.
-
-[NEXT]
 ### Correlation with an Industry
 #### Apple <-> The US Stock Market
 ![price_correlation](images/industry_correlation.svg)
 
 [NEXT]
-<!-- .slide: class="medium-slide" -->
+<!-- .slide: class="large-slide" -->
 # Goal
 Avoid trading when stock prices are continously increasing or decreasing.
 
+[NEXT]
+<!-- .slide: class="large-slide" -->
 Only use **mean reversion** strategy when stocks are hovering around mean.
 
 [NEXT]
@@ -491,6 +471,9 @@ Apply mean reversion strategy to:
 [NEXT]
 <!-- .slide: class="large-slide" -->
 Avoid losing money during **momentum** price movements.
+
+[NEXT]
+# Beware...
 
 [NEXT]
 <!-- .slide: class="large-slide" -->
@@ -600,14 +583,14 @@ Every weekday just before the US stock market closes:
 ![one_day_holding](images/one_day_holding.svg)
 
 [NEXT]
-### Simulation
+## Simulation
 
 Simulate how much money our trading algo would have made historically.
 
 Use pricing data we already have to do this.
 
 [NEXT]
-### Simulation Date Range
+## Simulation Date Range
 
 |                |                    |
 | -------------- | ------------------ |
@@ -621,13 +604,19 @@ Let's write the strategy in
 **Pure Python**.
 
 [NEXT]
-### Running the Code
+## Running the Code
 
 ```
 > python3 -m test_strategy_purepython \
     --stock_price_dir data/stocks \
     --start_date 2000-01-02
     --end_date 2017-11-10
+```
+<!-- .element: class="large" -->
+
+[NEXT]
+```
+TODO: output
 ```
 <!-- .element: class="large" -->
 
@@ -670,14 +659,8 @@ TIME: fill in total time taken here
 What went wrong?
 
 [NEXT]
-<span class="highlighted">Three steps</span> are computationally heavy:
-
-0. choose 4000 stocks to consider trading <!-- .element: class="crossed" -->
-1. <span class="highlighted">calculate each stock's daily returns for the past year</span>
-2. <span class="highlighted">calculate correlation between each stock's returns</span>
-3. <span class="highlighted">use correlations and yesterday's returns to decide how much to buy/sell of each stock</span>
-4. buy/sell decided stocks <!-- .element: class="crossed" -->
-5. wait until tomorrow, then get rid of stocks bought/borrowed <!-- .element: class="crossed" -->
+<!-- .slide: class="large-slide" -->
+<span class="highlighted">Three steps</span> are computationally heavy!
 
 [NEXT]
 <!-- .slide: class="hidden-table" -->
@@ -703,14 +686,16 @@ Every day, these steps are run:
 | **3.** | **Decision**    | use correlations and yesterday's returns to decide which stocks buy/sell |
 
 [NEXT]
-### How Much Computation is Required?
+# How Much Computation is Required?
 
 [NEXT]
-| Step            | **Per Day** | **Full Simulation** |
-| --------------- | ----------- | ------------------- |
-| **Returns**     | TIME        | TIME                |
-| **Correlation** | TIME        | TIME                |
-| **Decision**    | TIME        | TIME                |
+## Operations Required
+
+| Step            | **Complexity** | **Per Day** | **Full Simulation** |
+| --------------- | -------------- | ------------| ------------------- |
+| **Returns**     | `O(n)`         | TIME        | TIME                |
+| **Correlation** | `O(n^2)`       | TIME        | TIME                |
+| **Decision**    | `O(n^3)`       | TIME        | TIME                |
 
 <div class="source">
   <p>
@@ -722,7 +707,7 @@ Every day, these steps are run:
 
 [NEXT]
 <!-- .slide: class="large-slide" -->
-## Total Operations
+# Total Operations
 
 TIME
 
@@ -743,49 +728,57 @@ _note_
 Source for upcoming sections: https://jakevdp.github.io/blog/2014/05/09/why-python-is-slow/
 
 [NEXT]
-## Reason 1
-### Dynamic Typing
+# Reason 1
+## Dynamic Typing
 
 [NEXT]
-When a Python program executes, the interpreter doesn't know the type of the
-variables that are defined.
+<!-- .slide: class="large-slide" -->
+The Python interpreter doesn't know the type of variables in advance.
 
 ![python_slow_1](images/python_slow_1.png)
 
 [NEXT]
+<!-- .slide: class="large-slide" -->
 More instructions needed for any operation.
 
-**Primary reason** Python is slower than C or other compiled languages
-for processing numerical data.
+[NEXT]
+<!-- .slide: class="large-slide" -->
+The _**primary reason**_ python is slower than natively compliled languages for
+processing numerical data.
 
 [NEXT]
-## Reason 2
-### Interpreted, not Compiled
+# Reason 2
+## Interpreted, not Compiled
 
 [NEXT]
+<!-- .slide: class="large-slide" -->
+Less opportunities for code optimisation.
+
+_note_
 Python code is interpreted at runtime.
 
 Quick to iterate, but gives less chance to optimise.
 
 During compilation, a smart compiler can look ahead and optimise inefficient code.
 
-_note_
 See section 5 to learn see how compiling Python code can dramatically speed up
 code.
 
 [NEXT]
-## Reason 3
-### Fragmented Memory Access
+# Reason 3
+## Fragmented Memory Access
 
 [NEXT]
 ![python_slow_2](images/python_slow_2.png)
 
-[NEXT]
+_note_
 Bad for code that steps through **data in sequence**.
 
 Iterate through a single list accesses completely different regions of memory.
 
-Not **cache friendly**.
+[NEXT]
+<!-- .slide: class="large-slide" -->
+**Not cache friendly**!
 
 
 [NEXT SECTION]
@@ -793,13 +786,13 @@ Not **cache friendly**.
 ![numpy](images/numpy.svg)
 
 [NEXT]
-### The Foundation
+## The Foundation
 Fundamental package for high performance computing in Python.
 
 Many libraries/frameworks are built on top of NumPy.
 
 [NEXT]
-### Features
+## Features
 
 * multi-dimensional array objects
 * routines for fast operations on arrays
@@ -1043,7 +1036,7 @@ Allows us to apply smaller arrays to larger arrays.
 ### Using NumPy for Trading Simulation
 
 [NEXT]
-### Recap
+## Recap
 
 Every day, these steps are run:
 
@@ -1054,16 +1047,20 @@ Every day, these steps are run:
 | **3.** | **Decision**    | use correlations and yesterday's returns to decide which stocks buy/sell |
 
 [NEXT]
-### The First Step: Returns
+<!-- .slide: class="medium-slide" -->
+## The First Step: Returns
 
 Calculate each stock's daily returns for the past year.
 
 [NEXT]
-## Calculating Relative Return
+## Relative Percentage Return
+<div style="height: 64px"></div>
+![returns_equation](images/returns_equation.svg)
 
-Stock's relative daily return (in USD) on day _t_ is:
-
-![equation](images/equation_returns.svg)
+[NEXT]
+## Relative Percentage Return
+<div style="height: 64px"></div>
+![returns_equation](images/returns_equation_result.svg)
 
 [NEXT]
 ## Example
@@ -1078,18 +1075,9 @@ Stock's relative daily return (in USD) on day _t_ is:
 </div>
 <!-- .element: style="font-size: 46px" class="fragment" data-fragment-index="0" -->
 <div>
-  **Return** = (155.97 - 148.92) / 148.92
+  ![returns_equation](images/returns_equation_example.svg)
 </div>
 <!-- .element: class="fragment" data-fragment-index="1" -->
-<div>
-  **Return** = 0.047
-</div>
-<!-- .element: class="fragment" data-fragment-index="2" -->
-<div>
-  **Return** = 4.7%
-</div>
-<!-- .element: class="fragment" data-fragment-index="3" -->
-
 [NEXT]
 <!-- .slide: class="large-slide" -->
 Need to calculate return for all
@@ -1101,87 +1089,17 @@ stocks on all days.
 Could use a nested for loop:
 
 <pre class="large"><code data-noescape class="python">returns = {}
-
 for stock in stocks:
     for date in dates:
-      todays_price = prices[stock, date]
-      yesterdays_price = prices[stock, date - 1day]
       returns[stock] = (todays_price - yesterdays_price)
                        / yesterdays_price
 </code></pre>
 
 [NEXT]
-<!-- .slide: class="large-slide" -->
-Could use a nested for loop:
-
-<pre class="large"><code data-noescape class="python"><mark>returns = {}</mark>
-
-for stock in stocks:
-    for date in dates:
-      todays_price = prices[stock, date]
-      yesterdays_price = prices[stock, date - 1day]
-      returns[stock] = (todays_price - yesterdays_price)
-                       / yesterdays_price
-</code></pre>
+# Slow
 
 [NEXT]
 <!-- .slide: class="large-slide" -->
-Could use a nested for loop:
-
-<pre class="large"><code data-noescape class="python">returns = {}
-
-<mark>for stock in stocks:</mark>
-    for date in dates:
-      todays_price = prices[stock, date]
-      yesterdays_price = prices[stock, date - 1day]
-      returns[stock] = (todays_price - yesterdays_price)
-                       / yesterdays_price
-</code></pre>
-
-[NEXT]
-<!-- .slide: class="large-slide" -->
-Could use a nested for loop:
-
-<pre class="large"><code data-noescape class="python">returns = {}
-
-for stock in stocks:
-    <mark>for date in dates:</mark>
-      todays_price = prices[stock, date]
-      yesterdays_price = prices[stock, date - 1day]
-      returns[stock] = (todays_price - yesterdays_price)
-                       / yesterdays_price
-</code></pre>
-
-[NEXT]
-<!-- .slide: class="large-slide" -->
-Could use a nested for loop:
-<pre class="large"><code data-noescape class="python">returns = {}
-
-for stock in stocks:
-    for date in dates:
-      <mark>todays_price = prices[stock, date]</mark>
-      <mark>yesterdays_price = prices[stock, date - 1day]</mark>
-      returns[stock] = (todays_price - yesterdays_price)
-                       / yesterdays_price
-</code></pre>
-
-[NEXT]
-<!-- .slide: class="large-slide" -->
-Could use a nested for loop:
-<pre class="large"><code data-noescape class="python">returns = {}
-
-for stock in stocks:
-    for date in dates:
-      todays_price = prices[stock, date]
-      yesterdays_price = prices[stock, date - 1 day]
-      <mark>returns[stock] = (todays_price - yesterdays_price)</mark>
-                       <mark>/ yesterdays_price</mark>
-</code></pre>
-
-[NEXT]
-<!-- .slide: class="large-slide" -->
-**Inefficent.**
-
 Lots of copies and slow operations being run in Python code.
 
 [NEXT]

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1568px" height="149px" viewBox="0 0 1568 149" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 3</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-3" transform="translate(5.000000, -11.000000)">
+            <g id="Group-2">
+                <g id="Group">
+                    <text id="todays_price---yeste" font-family="AndaleMono, Andale Mono" font-size="54" font-weight="normal" fill="#0000DD">
+                        <tspan x="0.218261719" y="49">todays_price - yesterdays_price</tspan>
+                    </text>
+                    <text id="yesterdays_price" font-family="AndaleMono, Andale Mono" font-size="54" font-weight="normal" fill="#0000DD">
+                        <tspan x="244.257812" y="148">yesterdays_price</tspan>
+                    </text>
+                    <path d="M1005.5,86.5 L0.5,86.5" id="Line" stroke="#0000DD" stroke-width="10" stroke-linecap="square"></path>
+                </g>
+            </g>
+            <text id="=-0.05-=" font-family="AndaleMono, Andale Mono" font-size="62" font-weight="normal" fill="#0000DD">
+                <tspan x="1057.17578" y="101">= 0.05 =</tspan>
+            </text>
+            <text id="5%" font-family="Helvetica-Bold, Helvetica" font-size="120" font-weight="bold" fill="#60AA0B">
+                <tspan x="1392.28125" y="124">5%</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
