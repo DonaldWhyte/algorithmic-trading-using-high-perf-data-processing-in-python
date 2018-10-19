@@ -223,9 +223,8 @@ li.focus {
     font-weight: bold;
 }
 
-li.crossed {
+li.previous {
     color: #aaa;
-    text-decoration: line-through;
 }
 
 .hidden-table td {

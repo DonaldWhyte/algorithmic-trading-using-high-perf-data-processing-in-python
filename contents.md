@@ -179,7 +179,7 @@ Python gives us.
 [NEXT]
 # Outline
 <ol>
-  <li class="crossed">Build algo trading strategy using stock price data</li>
+  <li class="previous">Build algo trading strategy using stock price data</li>
   <li class="focus">Process stock price data in pure Python</li>
   <li class="hidden">Speed up processing using NumPy and vectorisation</li>
   <li class="hidden">Speed up processing even more using Numba</li>
@@ -188,8 +188,8 @@ Python gives us.
 [NEXT]
 # Outline
 <ol>
-  <li class="crossed">Build algo trading strategy using stock price data</li>
-  <li class="crossed">Process stock price data in pure Python</li>
+  <li class="previous">Build algo trading strategy using stock price data</li>
+  <li class="previous">Process stock price data in pure Python</li>
   <li class="focus">Speed up processing using NumPy and vectorisation</li>
   <li class="hidden">Speed up processing even more using Numba</li>
 </ol>
@@ -197,9 +197,9 @@ Python gives us.
 [NEXT]
 # Outline
 <ol>
-  <li class="crossed">Build algo trading strategy using stock price data</li>
-  <li class="crossed">Process stock price data in pure Python</li>
-  <li class="crossed">Speed up processing using NumPy and vectorisation</li>
+  <li class="previous">Build algo trading strategy using stock price data</li>
+  <li class="previous">Process stock price data in pure Python</li>
+  <li class="previous">Speed up processing using NumPy and vectorisation</li>
   <li class="focus">Speed up processing even more using Numba</li>
 </ol>
 
@@ -211,16 +211,8 @@ TIME times faster than pure Python.
 
 
 [NEXT SECTION]
-## 1. The Problem
+## 1. Let's make some cash!
 ![upward_trend](images/upward_trend.svg)
-
-[NEXT]
-<!-- .slide: class="large-slide" -->
-Let's make some cash!
-
-[NEXT]
-# Bob
-![quant](images/quant.jpg)
 
 [NEXT]
 
@@ -233,10 +225,6 @@ Let's make some cash!
   ![quant](images/quant.jpg)
 </div>
 <div class="clear-col"></div>
-
-[NEXT]
-![trader](images/trader.jpg)
-
 
 [NEXT]
 # The Data
@@ -275,6 +263,11 @@ Over 6,000,000 rows.
 Build an program that generates lists of trades to make.
 
 **One trade list every day.**
+
+[NEXT]
+# Disclaimer!!!
+
+TODO: fill in
 
 [NEXT]
 <!-- .slide: class="large-slide" -->
@@ -531,7 +524,9 @@ Every weekday just before the US stock market closes:
 [NEXT]
 Every weekday just before the US stock market closes:
 
-0. choose 4000 stocks to consider trading <!-- .element: class="crossed" -->
+TODO: strikeout not necessary! just grey out!
+
+0. choose 4000 stocks to consider trading <!-- .element: class="previous" -->
 1. calculate each stock's daily returns for the past year  <!-- .element: class="focus" -->
 2. calculate correlation between each stock's returns <!-- .element: class="hidden" -->
 3. use correlations and yesterday's returns to decide how much to buy/sell of each stock <!-- .element: class="hidden" -->
@@ -541,8 +536,8 @@ Every weekday just before the US stock market closes:
 [NEXT]
 Every weekday just before the US stock market closes:
 
-0. choose 4000 stocks to consider trading <!-- .element: class="crossed" -->
-1. calculate each stock's daily returns for the past year  <!-- .element: class="crossed" -->
+0. choose 4000 stocks to consider trading <!-- .element: class="previous" -->
+1. calculate each stock's daily returns for the past year  <!-- .element: class="previous" -->
 2. calculate correlation between each stock's returns <!-- .element: class="focus" -->
 3. use correlations and yesterday's returns to decide how much to buy/sell of each stock <!-- .element: class="hidden" -->
 4. buy/sell decided stocks <!-- .element: class="hidden" -->
@@ -551,9 +546,9 @@ Every weekday just before the US stock market closes:
 [NEXT]
 Every weekday just before the US stock market closes:
 
-0. choose 4000 stocks to consider trading <!-- .element: class="crossed" -->
-1. calculate each stock's daily returns for the past year  <!-- .element: class="crossed" -->
-2. calculate correlation between each stock's returns <!-- .element: class="crossed" -->
+0. choose 4000 stocks to consider trading <!-- .element: class="previous" -->
+1. calculate each stock's daily returns for the past year  <!-- .element: class="previous" -->
+2. calculate correlation between each stock's returns <!-- .element: class="previous" -->
 3. use correlations and yesterday's returns to decide how much to buy/sell of each stock <!-- .element: class="focus" -->
 4. buy/sell decided stocks <!-- .element: class="hidden" -->
 5. wait until tomorrow, then get rid of stocks bought/borrowed <!-- .element: class="hidden" -->
@@ -561,21 +556,21 @@ Every weekday just before the US stock market closes:
 [NEXT]
 Every weekday just before the US stock market closes:
 
-0. choose 4000 stocks to consider trading <!-- .element: class="crossed" -->
-1. calculate each stock's daily returns for the past year  <!-- .element: class="crossed" -->
-2. calculate correlation between each stock's returns <!-- .element: class="crossed" -->
-3. use correlations and yesterday's returns to decide how much to buy/sell of each stock <!-- .element: class="crossed" -->
+0. choose 4000 stocks to consider trading <!-- .element: class="previous" -->
+1. calculate each stock's daily returns for the past year  <!-- .element: class="previous" -->
+2. calculate correlation between each stock's returns <!-- .element: class="previous" -->
+3. use correlations and yesterday's returns to decide how much to buy/sell of each stock <!-- .element: class="previous" -->
 4. buy/sell decided stocks <!-- .element: class="focus" -->
 5. wait until tomorrow, then get rid of stocks bought/borrowed <!-- .element: class="hidden" -->
 
 [NEXT]
 Every weekday just before the US stock market closes:
 
-0. choose 4000 stocks to consider trading <!-- .element: class="crossed" -->
-1. calculate each stock's daily returns for the past year  <!-- .element: class="crossed" -->
-2. calculate correlation between each stock's returns <!-- .element: class="crossed" -->
-3. use correlations and yesterday's returns to decide how much to buy/sell of each stock <!-- .element: class="crossed" -->
-4. buy/sell decided stocks <!-- .element: class="crossed" -->
+0. choose 4000 stocks to consider trading <!-- .element: class="previous" -->
+1. calculate each stock's daily returns for the past year  <!-- .element: class="previous" -->
+2. calculate correlation between each stock's returns <!-- .element: class="previous" -->
+3. use correlations and yesterday's returns to decide how much to buy/sell of each stock <!-- .element: class="previous" -->
+4. buy/sell decided stocks <!-- .element: class="previous" -->
 5. wait until tomorrow, then get rid of stocks bought/borrowed <!-- .element: class="focus" -->
 
 [NEXT]
@@ -728,6 +723,8 @@ _note_
 Source for upcoming sections: https://jakevdp.github.io/blog/2014/05/09/why-python-is-slow/
 
 [NEXT]
+TODO: this section can be shortened a lot -- we all know why Python is slow, it wasn't designed for it!
+
 # Reason 1
 ## Dynamic Typing
 
@@ -812,13 +809,11 @@ At the core of the NumPy package, is the ndarray object. This encapsulates
 n-dimensional arrays of homogeneous data types, with many operations being
 performed in compiled code for performance.
 
-[NEXT]
-## Examples
+TODO: you can replace formulas with matrix operations
+    for returns
 
-```python
-import numpy as np
-```
-<!-- .element: class="large" -->
+[NEXT]
+# Examples
 
 [NEXT]
 ### Creating an Array
@@ -1305,6 +1300,9 @@ Modern CPUs provide direct support for vector operations.
 
 A **single instruction** is applied to **multiple** data points.
 
+TODO: research differences (if any) between vectorisation and pipelining.
+TODO: high-level explanation of CPU layers -- CPUs/pipelines/vectors diagram!!!!!!
+
 [NEXT]
 ### Adding Two Vectors
 #### Single Instruction Single Data (SISD)
@@ -1367,6 +1365,8 @@ Disable optimisations to prevent compiler auto-vectorising.
 clang -O0 vectorised_timings.c
 ```
 
+TODO: remove C vectorising example
+
 [NEXT]
 <!-- .slide: class="medium-slide" -->
 **Speedup: 1.4x**
@@ -1424,6 +1424,8 @@ Not all algorithms are vectorisable.
 [NEXT SECTION]
 ## 5. Numba
 ![numba](images/numba.png)
+
+TODO: type annotations, use in code examples!
 
 _note_
 see https://numba.pydata.org/ for examples
