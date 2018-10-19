@@ -1096,7 +1096,7 @@ for stock in stocks:
 </code></pre>
 
 [NEXT]
-# Slow
+# Slow!
 
 [NEXT]
 <!-- .slide: class="large-slide" -->
@@ -1287,7 +1287,7 @@ Expressing data in vector/matrix form opens up a new world of optimisations.
 * Operations executed in optimised compiled code
 
 [NEXT]
-But also...
+# But also...
 
 [NEXT SECTION]
 ## 4. Vectorisation
@@ -1429,18 +1429,20 @@ _note_
 see https://numba.pydata.org/ for examples
 
 [NEXT]
-## Problem
+<!-- .slide: class="large-slide" -->
+# Problem
 Not all algorithms are vectorisable.
 
 _note_
 Are these non-vectorisable Python functions doomed to be slow?
 
 [NEXT]
-## Solution
+<!-- .slide: class="large-slide" -->
+# Solution
 Compile non-vectorisable Python code to native machine instructions.
 
 [NEXT]
-## Numba
+# Numba
 
 Annotate Python functions with **decorators**.
 
@@ -1454,13 +1456,14 @@ _note_
 Numba gives you the power to speed up your applications with high performance functions written directly in Python. With a few annotations, array-oriented and math-heavy Python code can be just-in-time compiled to native machine instructions, similar in performance to C, C++ and Fortran, without having to switch languages or Python interpreters.
 
 [NEXT]
-`numba.jit`
+<!-- .slide: class="medium-slide" -->
+<code style="font-size: 80px">numba.jit</code>
 
 Decorator that tells Numba to compile a function to native instructions.
 
 [NEXT]
-### Example
-#### Summing an Array of Numbers
+## Example
+### Summing an Array of Numbers
 
 ```python
 def sum_array(arr):
@@ -1472,7 +1475,7 @@ def sum_array(arr):
 <!-- .element: class="large" -->
 
 [NEXT]
-### Sprinkle Some Numba Magic
+## Sprinkle Some Numba Magic
 
 <pre class="large"><code data-noescape class="python"><mark>from numba import jit</mark>
 
@@ -1540,7 +1543,8 @@ Explicitly specified types.
 <div id="numba-times"></div>
 
 [NEXT]
-### To Summarise
+<!-- .slide: class="medium-slide" -->
+# In a Nutshell
 Use vectorised NumPy code where possible.
 
 Fall back to Numba if code cannot be vectorised.
@@ -1563,6 +1567,7 @@ Fall back to Numba if code cannot be vectorised.
 **TIME days** ⟶ **TIME minutes**
 
 [NEXT]
+<!-- .slide: class="large-slide" -->
 On a single Macbook pro.
 
 
@@ -1571,6 +1576,7 @@ On a single Macbook pro.
 ![fin](images/fin.svg)
 
 [NEXT]
+<!-- .slide: class="large-slide" -->
 Python is great for research.
 
 Out of the box Python is **slow**.
@@ -1583,19 +1589,22 @@ Processing large volumes of data or training complex machine learning models.
 Standard Python in prod **isn't viable** for many use cases.
 
 [NEXT]
+<!-- .slide: class="large-slide" -->
 Bad for **research**.
 
 Very slow experimentation cycles.
 
 [NEXT]
+<!-- .slide: class="large-slide" -->
 Bad for **production**.
 
 Cannot run time-sensitive computational tasks.
 
 [NEXT]
-We can still use Python for research _and_ production.
+<!-- .slide: class="large-slide" -->
+We can still use Python for both research _and_ production.
 
-By using Python's large ecosystem of scientific computing packages.
+Use Python's large ecosystem of scientific computing packages.
 
 [NEXT]
 Keep computation in **native code** as much possible.
@@ -1634,22 +1643,20 @@ If RAM or disk is your bottleneck, parallelise using a cluster.
 Otherwise, you can get **very** far with vectorisation and sprinkling
 `@numba.jit` magic.
 
-
 [NEXT]
-<!-- .slide: class="large-slide" -->
-**Спасибо!**
+# Спасибо!
 
 [NEXT]
 <!-- .slide: class="small-slide" -->
-### Links
+# Links
 
 * these slides:
-  - http://donsoft.io/high-performance-data-processing-in-python
+  - http://donsoft.io/high-performance-data-processing-in-python-v2
 * example code from this talk:
-  - https://github.com/DonaldWhyte/high-performance-data-processing-in-python/tree/master/code
+  - https://github.com/DonaldWhyte/high-performance-data-processing-in-python-v2/tree/master/code
 
 [NEXT]
-### Get In Touch
+# Get In Touch
 
 <div class="left-col" style="text-center: left">
   <br />
@@ -1664,15 +1671,16 @@ Otherwise, you can get **very** far with vectorisation and sprinkling
 
 
 [NEXT SECTION]
-## Appendix
+# Appendix
 
 [NEXT]
-### References
+# References
 
 **[1]** https://www.jetbrains.com/research/python-developers-survey-2017/
 
 [NEXT]
-### Timing Specifications
+## Timing Specifications
+
 All performance timings in these slides were produced by running the code on a
 machine with the following specs:
 
@@ -1683,7 +1691,7 @@ machine with the following specs:
 | **Memory:**    | 8 GB 2133 MHz LPDDR3  |
 
 [NEXT]
-### Image Credits
+# Image Credits
 
 * [Freepik](https://www.freepik.com/)
 * [Icon Fonts](http://www.onlinewebfonts.com/icon)
