@@ -524,8 +524,6 @@ Every weekday just before the US stock market closes:
 [NEXT]
 Every weekday just before the US stock market closes:
 
-TODO: strikeout not necessary! just grey out!
-
 0. choose 4000 stocks to consider trading <!-- .element: class="previous" -->
 1. calculate each stock's daily returns for the past year  <!-- .element: class="focus" -->
 2. calculate correlation between each stock's returns <!-- .element: class="hidden" -->
@@ -809,8 +807,8 @@ At the core of the NumPy package, is the ndarray object. This encapsulates
 n-dimensional arrays of homogeneous data types, with many operations being
 performed in compiled code for performance.
 
-TODO: you can replace formulas with matrix operations
-    for returns
+TODO: you can replace formulas with matrix operations for returns (also)
+      add side-by-side equation to matrix simulation
 
 [NEXT]
 # Examples
@@ -1326,53 +1324,6 @@ reduction is enabled by vectorization and data-parallelism. You don’t even hav
 to handle threads and race conditions to gain this parallelism.
 
 [NEXT]
-### Example in C
-#### Adding 10,000,000 Numbers
-
-[NEXT]
-### Non-Vectorised
-
-```c
-void add(float* a, float* b, float* out, int len) {
-    for (int i = 0; i < len; ++i) {
-        out[i] = a[i] + b[i];
-    }
-}
-```
-
-[NEXT]
-### Vectorised
-
-```c
-void add_vectorised(float* a, float* b, float* out, int len) {
-    int i = 0;
-    for (; i < len - 4; i += 4) {
-        out[i] = a[i] + b[i];
-        out[i + 1] = a[i + 1] + b[i + 1];
-        out[i + 2] = a[i + 2] + b[i + 2];
-        out[i + 3] = a[i + 3] + b[i + 3];
-    }
-    for (; i < len; ++i) {
-        out[i] = a[i] + b[i];
-    }
-}
-```
-
-[NEXT]
-Disable optimisations to prevent compiler auto-vectorising.
-
-```bash
-clang -O0 vectorised_timings.c
-```
-
-TODO: remove C vectorising example
-
-[NEXT]
-<!-- .slide: class="medium-slide" -->
-**Speedup: 1.4x**
-<div id="vectorise-benchmark"></div>
-
-[NEXT]
 ### Vectorised Definitions
 
 | **Context**     |                                                                                     |
@@ -1425,8 +1376,6 @@ Not all algorithms are vectorisable.
 ## 5. Numba
 ![numba](images/numba.png)
 
-TODO: type annotations, use in code examples!
-
 _note_
 see https://numba.pydata.org/ for examples
 
@@ -1468,7 +1417,7 @@ Decorator that tells Numba to compile a function to native instructions.
 ### Summing an Array of Numbers
 
 ```python
-def sum_array(arr):
+def sum_array(arr: List[str]):
     result = 0
     for i in range(len(arr)):
         result += arr[i]
@@ -1482,7 +1431,7 @@ def sum_array(arr):
 <pre class="large"><code data-noescape class="python"><mark>from numba import jit</mark>
 
 <mark>@jit(nopython=True)</mark>
-def sum_array(arr):
+def sum_array(arr: List[str]):
     result = 0
     for i in range(len(arr)):
         result += arr[i]
@@ -1510,7 +1459,7 @@ Uses types of arguments in function's first invocation.
 <pre class="large"><code data-noescape class="python">from numba import int64, jit
 
 <mark>@jit(int64(int64[:]), nopython=True)</mark>
-def sum_array(arr):
+def sum_array(arr: List[str]):
     result = 0
     for i in range(len(arr)):
         result += arr[i]
