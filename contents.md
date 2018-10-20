@@ -834,9 +834,6 @@ At the core of the NumPy package, is the ndarray object. This encapsulates
 n-dimensional arrays of homogeneous data types, with many operations being
 performed in compiled code for performance.
 
-TODO: you can replace formulas with matrix operations for returns (also)
-      add side-by-side equation to matrix simulation
-
 [NEXT]
 # Examples
 
@@ -1080,11 +1077,6 @@ Calculate each stock's daily returns for the past year.
 ![returns_equation](images/returns_equation.svg)
 
 [NEXT]
-## Relative Percentage Return
-<div style="height: 64px"></div>
-![returns_equation](images/returns_equation_result.svg)
-
-[NEXT]
 ## Example
 
 | **Date**   | **AAPL Stock Price** |
@@ -1133,10 +1125,6 @@ Lots of copies and slow operations being run in Python code.
 
 [NEXT]
 ## Stock Price Matrix
-![numpy_example_price_matrix](images/numpy_example_price_matrix.svg)
-
-[NEXT]
-## Stock Price Matrix
 ![numpy_example_price_matrix](images/numpy_example_price_matrix_marked.svg)
 
 [NEXT]
@@ -1159,28 +1147,25 @@ Use bulk matrix-based operations using NumPy.
 ![numpy_example_returns_matrix_calc](images/numpy_example_returns_matrix_calc1.svg)
 
 [NEXT]
-### Shift Prices Forward One Day
 ![numpy_example_returns_matrix_calc](images/numpy_example_returns_matrix_calc2.svg)
 
 [NEXT]
-### Subtract 1-Day Shifted Price Matrix
-<div style="height: 32px"></div>
-![numpy_example_returns_matrix_calc](images/numpy_example_returns_matrix_calc3.svg)
+# Returns Formula
+<div style="height: 64px"></div>
+![returns_equation](images/returns_equation.svg)
 
 [NEXT]
-### Divide By 1-Day Shifted Price Matrix
+## Insert Full Price Matrices into Returns Formula
+<div style="height: 32px"></div>
+![numpy_example_returns_matrix_calc_small](images/numpy_example_returns_matrix_calc3.svg)
+
+[NEXT]
+## Output: Returns Matrix
 <div style="height: 32px"></div>
 ![numpy_example_returns_matrix_calc](images/numpy_example_returns_matrix_calc4.svg)
 
 [NEXT]
-### Output
-##### A Matrix With Each Stock's Daily Returns
-<div style="height: 32px"></div>
-![numpy_example_returns_matrix_calc](images/numpy_example_returns_matrix_calc5.svg)
-
-[NEXT]
-### Output
-##### A Matrix With Each Stock's Daily Returns
+## Output: Returns Matrix
 ![numpy_example_returns_matrix](images/numpy_example_returns_matrix.svg)
 
 [NEXT]

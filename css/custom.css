@@ -385,6 +385,10 @@ img[alt="numpy_example_returns_matrix_detail"] {
     width: 1200px;
 }
 
+img[alt="numpy_example_returns_matrix_calc_small"] {
+    width: 850px;
+}
+
 img[alt="sisd"],
 img[alt="simd"] {
     width: 500px;
