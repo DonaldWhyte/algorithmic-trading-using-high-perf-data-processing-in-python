@@ -265,9 +265,21 @@ Build an program that generates lists of trades to make.
 **One trade list every day.**
 
 [NEXT]
-# Disclaimer!!!
+<!-- .slide: class="medium-slide" -->
+# Disclaimer!
 
-TODO: fill in
+The following strategy is for demonstration purposes only.
+
+Don't take it as real investment/trading advice.
+
+_note_
+TODO: add warning sign unicode to the slides!
+
+[NEXT]
+<!-- .slide: class="large-slide" -->
+# Positive Note
+
+The strategy's high-level structure **does** reflect what many real world auotmated trading strategies do.
 
 [NEXT]
 <!-- .slide: class="large-slide" -->
@@ -602,35 +614,53 @@ Let's write the strategy in
 ```
 > python3 -m test_strategy_purepython \
     --stock_price_dir data/stocks \
-    --start_date 2000-01-02
+    --start_date 1990-01-02
     --end_date 2017-11-10
+Running simulation from 1990-01-02 to 2017-11-10.
+Simulating date 1990-01-02: day's return is 0.000%
+Simulating date 1990-01-03: day's return is -1.229%
+Simulating date 1990-01-04: day's return is 0.0057%
+...
 ```
 <!-- .element: class="large" -->
 
 [NEXT]
-```
-TODO: output
-```
-<!-- .element: class="large" -->
+# The Result
 
 [NEXT]
-## Profit
+## We Make Lots of Money!
 
-![pnl](images/pnl.svg)
+<span class="large-pnl">**Returns:** <span class="profit">27.70</span></span>
+
+![pnl](images/pnl_total_early.svg)
 
 [NEXT]
-## Profit
+## Summary at the End of 2001
 
-|                                |                    |
-| ------------------------------ | ------------------ |
-| **Initial Investment**         | $TIME              |
-| **Value at End of Simulation** | $TIME              |
-| **Total Profit**               | $TIME              |
-| **Return on Investment**       | %TIME              |
+|                                |                                     |
+| ------------------------------ | ----------------------------------- |
+| **Initial Investment**         | $300,000                            |
+| **Current Value**              | $383,100                            |
+| **Total Profit**               | <span class="profit">$83,100</span> |
+| **Return on Investment**       | <span class="profit">%27.70</span>  |
 
 [NEXT]
 ### Success!
 <span style="font-size: 120px">🎉</span>
+
+[NEXT]
+# However...
+
+[NEXT]
+## We Stop Making Money...
+![pnl](images/pnl_total.svg)
+
+[NEXT]
+## Returns Each Year
+![pnl](images/pnl_yearly.svg)
+
+[NEXT]
+TODO: funny failure slide
 
 [NEXT]
 <!-- .slide: class="large-slide" -->
@@ -719,9 +749,6 @@ Why is Python so slow?
 
 _note_
 Source for upcoming sections: https://jakevdp.github.io/blog/2014/05/09/why-python-is-slow/
-
-[NEXT]
-TODO: this section can be shortened a lot -- we all know why Python is slow, it wasn't designed for it!
 
 # Reason 1
 ## Dynamic Typing
@@ -886,12 +913,13 @@ array([[0., 1.],
 ![ndarray](images/ndarray_5.svg)
 
 [NEXT]
+<!-- .slide: class="medium-slide" -->
 Reshaping or slicing arrays creates a **view**.
 
 No copies are made.
 
 [NEXT]
-### Performance Benefits
+## Performance Benefits
 
 * Data stored contiguously
   - no memory overhead
@@ -901,11 +929,11 @@ No copies are made.
   - executed in heavily optimised compiled code
 
 [NEXT]
-### Benchmark
-#### Adding 10,000,000 Numbers
+## Benchmark
+### Adding 10,000,000 Numbers
 
 [NEXT]
-### Pure Python
+## Pure Python
 
 ```python
 a = list(range(10000000))
@@ -917,7 +945,7 @@ c = [a[i] + b[i] for i in range(len(a))]
 <!-- .element: class="large" -->
 
 [NEXT]
-### NumPy
+## NumPy
 
 ```python
 import numpy as np
@@ -936,15 +964,16 @@ d = a + b
 <!-- .element: class="large" -->
 
 [NEXT]
-### Timing (seconds)
+## Timing (seconds)
 <div id="basic-numpy-benchmark-times"></div>
 
 [NEXT]
-### Speedup Factor
+## Speedup Factor
 <div id="basic-numpy-benchmark-speedup"></div>
 
 [NEXT]
-NumPy with loops is the slowest of all choices.
+<!-- .slide: class="medium-slide" -->
+NumPy with loops is the slowest.
 
 Takes **4x** longer than pure Python!
 
@@ -980,13 +1009,13 @@ Since those buffers are stored contiguously in memory, we're cache friendly.
 The CPU has to fetch less data from RAM.
 
 [NEXT]
-### Keep it in NumPy!
+## Keep it in NumPy!
 Don't loop through `np.ndarray`s.
 
 Move the computation to the NumPy/C/native code level where possible.
 
 [NEXT]
-### A Problem...
+## Problem
 For arrays with the same size, operations are performed element-by-element.
 
 Sometimes we want to apply smaller scalars or vectors to larger arrays.

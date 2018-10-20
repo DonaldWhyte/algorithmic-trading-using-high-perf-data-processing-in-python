@@ -1,6 +1,9 @@
 # Mac OS X metadata files
 .DS_Store
 
+# iPython notebook artifacts
+.ipynb_checkpoints
+
 # Logs
 logs
 *.log
