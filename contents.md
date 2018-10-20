@@ -1641,7 +1641,9 @@ Otherwise, you can get **very** far with vectorisation and sprinkling
 [NEXT]
 # References
 
-**[1]** https://www.jetbrains.com/research/python-developers-survey-2017/
+**[1]** https://www.jetbrains.com/research/python-developers-survey-2017
+
+**[2]** [Statistical Arbitrage in the US Equities Market, M Avellaneda - 2008](https://www.math.nyu.edu/faculty/avellane/AvellanedaLeeStatArb20090616.pdf)
 
 [NEXT]
 ## Timing Specifications
