@@ -629,42 +629,41 @@ Simulating date 1990-01-04: day's return is 0.0057%
 
 [NEXT]
 ## We Make Lots of Money!
-
-<span class="large-pnl">**Returns:** <span class="profit">27.70</span></span>
-
 ![pnl](images/pnl_total_early.svg)
 
 [NEXT]
-## Summary at the End of 2001
+## Summary at End of 2001
 
-|                                |                                     |
-| ------------------------------ | ----------------------------------- |
-| **Initial Investment**         | $300,000                            |
-| **Current Value**              | $383,100                            |
-| **Total Profit**               | <span class="profit">$83,100</span> |
-| **Return on Investment**       | <span class="profit">%27.70</span>  |
+<span class="large-pnl">**Returns:** <span class="profit">%27.70</span></span>
+
+|                        |          |
+| ---------------------- | -------- |
+| **Initial Investment** | $300,000 |
+| **Current Value**      | $383,100 |
+| **Total Profit**       | $83,100  |
 
 [NEXT]
-### Success!
+# Success!
 <span style="font-size: 120px">🎉</span>
 
 [NEXT]
-# However...
+# ...or is it?
 
 [NEXT]
 ## We Stop Making Money...
 ![pnl](images/pnl_total.svg)
 
 [NEXT]
-## Returns Each Year
+## Yearly Returns
 ![pnl](images/pnl_yearly.svg)
 
 [NEXT]
-TODO: funny failure slide
+<!-- .slide: class="large-slide" -->
+Our first attempt at an automated trading strategy failed!
 
 [NEXT]
 <!-- .slide: class="large-slide" -->
-# Time Taken: 1 Month
+## Simulation Time: 1 Month
 
 ![waiting_skeleton](images/waiting_skeleton.jpg)
 
@@ -672,10 +671,16 @@ _note_
 TIME: fill in total time taken here
 
 [NEXT]
-<!-- .slide: class="large-slide" -->
-# Bad for Research
+<!-- .slide: class="medium-slide" -->
+# Slow Simulation Time is a Big Problem
 
-**Very slow** to explore different trading strategies.
+[NEXT]
+<!-- .slide: class="medium-slide" -->
+Strategies always require massive amounts of tuning and experimentation.
+
+Simulations need to run fast.
+
+**Hours, not months!**
 
 [NEXT]
 <!-- .slide: class="large-slide" -->
@@ -683,7 +688,7 @@ What went wrong?
 
 [NEXT]
 <!-- .slide: class="large-slide" -->
-<span class="highlighted">Three steps</span> are computationally heavy!
+<span class="highlighted">3 steps</span> are computationally heavy!
 
 [NEXT]
 <!-- .slide: class="hidden-table" -->
