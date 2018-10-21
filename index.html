@@ -211,10 +211,6 @@
         });
       }
 
-      Reveal.addEventListener('fragmentshown', function(event) {
-         document.getElementById("postfragment").style.color="red";
-      });
-
       Reveal.addEventListener('ready', function(event) {
         Highcharts.setOptions({
             lang: {
@@ -222,15 +218,24 @@
             }
         });
 
-        const hours_label_formatter = function() {
-          return Highcharts.numberFormat(this.y, 2) + 'h';
+        const seconds_label_formatter = function() {
+          return Highcharts.numberFormat(this.y, 2)  + 's';
+        };
+        const minutes_label_formatter = function() {
+          return Highcharts.numberFormat(this.y, 2)  + 'm';
+        };
+        const days_label_formatter = function() {
+          return Highcharts.numberFormat(this.y, 2) + 'd';
         };
         const speedup_label_formatter = function() {
           return Highcharts.numberFormat(this.y, 1) + 'X';
         };
 
-        const time_axis_label = 'execution time (secs)';
-        const time_axis_formatter = function () { return this.value + 'h'; };
+        const days_axis_label = 'execution time (days)';
+        const days_axis_formatter = function () { return this.value + 'd'; };
+
+        const minutes_axis_label = 'execution time (minutes)';
+        const minutes_axis_formatter = function () { return this.value + 'm'; };
 
         const speedup_axis_label = 'speedup factor';
         const speedup_axis_formatter = function () { return this.value + 'x'; };
@@ -271,29 +276,29 @@
         const pure_python_times = {
             name: 'Pure Python',
             color: 'green',
-            // TODO: replace pure python time placeholders when timings eventually finish
-            data: [1000, 1000, 1000]
+            data: [0.446296468, 406.018211, 710.559764]
         };
         const numpy_times = {
           name: 'NumPy',
           color: 'blue',
-          data: [0.0056, 5.05416667, 62.7]
+          data: [0.0056, 0.21056, 2.6125]
         };
+
         const numba_times = {
           name: 'NumPy + Numba',
           color: 'purple',
-          data: [0.0056, 5.05416667, 8.84]
+          data: [0.0056, 0.21056, 0.36734]
         };
 
         create_bar_chart(
           'purepython-times', [pure_python_times],
-          timing_sections, time_axis_label, time_axis_formatter, 'dark',
-          true, true, hours_label_formatter);
+          timing_sections, days_axis_label, days_axis_formatter, 'dark',
+          true, true, days_label_formatter, true);
 
         create_bar_chart(
           'numpy-times', [pure_python_times, numpy_times],
-          timing_sections, time_axis_label, time_axis_formatter, 'dark',
-          true, true, hours_label_formatter);
+          timing_sections, days_axis_label, days_axis_formatter, 'dark',
+          true, true, days_label_formatter, true);
 
         const numpy_unvectorisable_highlighted = JSON.parse(
           JSON.stringify(numpy_times));
@@ -301,13 +306,17 @@
         create_bar_chart(
           'numpy-times-unvectorisable-highlighted',
           [numpy_unvectorisable_highlighted],
-          timing_sections, time_axis_label, time_axis_formatter, 'dark',
-          false, true, hours_label_formatter);
+          timing_sections, days_axis_label, days_axis_formatter, 'dark',
+          false, true, days_label_formatter);
 
         create_bar_chart(
           'numba-times', [numpy_times, numba_times],
-          timing_sections, time_axis_label, time_axis_formatter, 'dark',
-          true, true, hours_label_formatter);
+          timing_sections, days_axis_label, days_axis_formatter, 'dark',
+          true, true, days_label_formatter);
+        create_bar_chart(
+          'numba-times', [numpy_times, numba_times],
+          timing_sections, days_axis_label, days_axis_formatter, 'dark',
+          true, true, days_label_formatter);
 
 
         const total_time_sections = [
@@ -316,11 +325,11 @@
           'Numpy + Numba'
         ];
         const original_total_time = sum(pure_python_times.data);
-
         create_bar_chart(
           'total-times',
           [
             {
+              color: 'blue',
               data: [
                 original_total_time,
                 sum(numpy_times.data),
@@ -329,8 +338,8 @@
             }
           ],
           total_time_sections,
-          time_axis_label, time_axis_formatter, 'dark',
-          false, true, hours_label_formatter, true);
+          days_axis_label, days_axis_formatter, 'dark',
+          false, true, days_label_formatter, true);
 
         const total_speedups = [
           original_total_time / original_total_time,
@@ -339,7 +348,16 @@
         ];
         create_bar_chart(
           'total-speedups',
-          [{data: total_speedups}],
+          [
+            {
+              color: 'red',
+              data: [
+                original_total_time / original_total_time,
+                original_total_time / sum(numpy_times.data),
+                original_total_time / sum(numba_times.data)
+              ]
+            }
+          ],
           total_time_sections,
           speedup_axis_label, speedup_axis_formatter, 'dark',
           false, true, speedup_label_formatter, false);
@@ -347,16 +365,22 @@
         just_returns_sections = [timing_sections[0]];
         pure_python_just_returns_times = JSON.parse(
             JSON.stringify(pure_python_times));
+        // convert days to minutes
+        pure_python_just_returns_times.data[0] *= 24 * 60
         pure_python_just_returns_times.data.length = 1;
+
         numpy_just_returns_times = JSON.parse(
             JSON.stringify(numpy_times));
         numpy_just_returns_times.data.length = 1;
+        // convert days to minutes
+        numpy_just_returns_times.data[0] *= 24 * 60
+
         create_bar_chart(
           'numpy-returns-times',
           [pure_python_just_returns_times, numpy_just_returns_times],
           just_returns_sections,
-          time_axis_label, time_axis_formatter, 'dark',
-          true, true, hours_label_formatter);
+          minutes_axis_label, minutes_axis_formatter, 'dark',
+          true, true, minutes_label_formatter);
 
         const pure_python_just_returns_speedups = {
             name: 'Pure Python',
@@ -391,7 +415,7 @@
           'dark',
           false,
           true,
-          hours_label_formatter);
+          seconds_label_formatter);
         create_bar_chart(
           'basic-numpy-benchmark-speedup',
           [
@@ -423,10 +447,6 @@
         const numba_benchmark_speedups = [
             1.7544 / 1.7544, 1.7544 / 0.0065, 1.7544 / 0.0065, 1.7544 / 0.0091
         ];
-
-        const high_precision_hours_label_formatter = function() {
-          return Highcharts.numberFormat(this.y, 2) + 'h';
-        };
 
         create_bar_chart(
           'numba-benchmark-times1',

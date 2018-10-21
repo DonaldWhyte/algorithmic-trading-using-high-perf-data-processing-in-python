@@ -208,7 +208,7 @@ Python gives us.
 <!-- .slide: class="large-slide" -->
 ## Final Optimised Solution
 
-TIME times faster than pure Python.
+1914 times faster than pure Python.
 
 
 [NEXT SECTION]
@@ -654,16 +654,13 @@ Our first attempt at an automated trading strategy failed!
 
 [NEXT]
 <!-- .slide: class="large-slide" -->
-## Simulation Time: 1 Month
+## Simulation Time: 3 years
 
 ![waiting_skeleton](images/waiting_skeleton.jpg)
 
-_note_
-TIME: fill in total time taken here
-
 [NEXT]
 <!-- .slide: class="medium-slide" -->
-# Slow Simulation Time is a Big Problem
+# Long Simulations Are a Huge Problem
 
 [NEXT]
 <!-- .slide: class="medium-slide" -->
@@ -671,7 +668,7 @@ Strategies always require massive amounts of tuning and experimentation.
 
 Simulations need to run fast.
 
-**Hours, not months!**
+**Hours, not years!**
 
 [NEXT]
 <!-- .slide: class="large-slide" -->
@@ -732,7 +729,7 @@ Every day, these steps are run:
 ### Execution Time Breakdown
 
 [NEXT]
-**Total time:** TIME hours (TIME secs)
+**Total time:** 3 years (1117 days)
 
 <div id="purepython-times"></div>
 
@@ -1269,9 +1266,9 @@ Expressing data in vector/matrix form opens up a new world of optimisations.
 ### Execution Time Breakdown
 
 [NEXT]
-**Total time:** TIME hours ⟶ TIME hours
+**Total time:** 3 years ⟶ 2.8 days
 
-**Speedup:** TIMEx
+**Speedup:** 395x
 
 <div id="numpy-times"></div>
 
@@ -1491,9 +1488,9 @@ Added `@jit(nopython=True)` to all functions.
 Explicitly specified types.
 
 [NEXT]
-**Total time:** TIME mins ⟶ TIME mins
+**Total time:** 2.8 days ⟶ 0.58 days
 
-**Speedup:** TIMEx ⟶ TIMEx
+**Speedup:** 395x ⟶ 1914x
 
 <div id="numba-times"></div>
 
@@ -1519,7 +1516,7 @@ Fall back to Numba if code cannot be vectorised.
 
 [NEXT]
 <!-- .slide: class="large-slide" -->
-**TIME days** ⟶ **TIME minutes**
+**3 years** ⟶ **14 hours**
 
 [NEXT]
 <!-- .slide: class="large-slide" -->
