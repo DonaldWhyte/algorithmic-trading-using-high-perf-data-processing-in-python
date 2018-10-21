@@ -740,6 +740,7 @@ Why is Python so slow?
 _note_
 Source for upcoming sections: https://jakevdp.github.io/blog/2014/05/09/why-python-is-slow/
 
+[NEXT]
 # Reason 1
 ## Dynamic Typing
 
@@ -1299,6 +1300,7 @@ Modern CPUs provide direct support for vector operations.
 
 A **single instruction** is applied to **multiple** data points.
 
+_note_
 TODO: research differences (if any) between vectorisation and pipelining.
 TODO: high-level explanation of CPU layers -- CPUs/pipelines/vectors diagram!!!!!!
 
