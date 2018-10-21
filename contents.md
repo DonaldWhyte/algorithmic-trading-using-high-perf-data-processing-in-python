@@ -291,9 +291,6 @@ We leverage **two fundamental behaviours** about stock prices.
 ![mean_reversion](images/mean_reversion.png)
 
 [NEXT]
-![reversion_example_aapl](images/reversion_example_aapl_price.svg)
-
-[NEXT]
 <!-- .slide: class="large-slide" -->
 # Stock's Daily Return
 Represents change in stock price.
@@ -301,7 +298,7 @@ Represents change in stock price.
 [NEXT]
 <!-- .slide: class="large-slide" -->
 # Stock's Daily Return
-Equation:
+Calculate with:
 
 <code style="font-size: 50px">price_today - price_yesterday</code>
 
@@ -315,13 +312,13 @@ Equation:
 Buy or sell a stock when its returns exceed a threshold.
 
 [NEXT]
-![reversion_example_trading](images/reversion_example_trading1.svg)
-
-[NEXT]
 <!-- .slide: class="large-slide" -->
 Suppose we have
 
 **$90,000** to trade with.
+
+[NEXT]
+![reversion_example_trading](images/reversion_example_trading1.svg)
 
 [NEXT]
 <!-- .slide: class="medium-slide" -->
@@ -430,11 +427,6 @@ legit reasons, e.g. the stock market has gone down as a whole (recession),
 so if you buy when it dips it NEVER bounces back and you've lost money .
 
 [NEXT]
-<!-- .slide: class="large-slide" -->
-Avoid this problem by considering **stock correlation** in trading decisions.
-
-
-[NEXT]
 # 2. Stocks are Correlated
 
 [NEXT]
@@ -450,11 +442,18 @@ Avoid this problem by considering **stock correlation** in trading decisions.
 [NEXT]
 <!-- .slide: class="large-slide" -->
 # Goal
-Avoid trading when stock prices are continously increasing or decreasing.
+Avoid trading during momentum phases by considering **stock correlation** in trading decisions.
 
 [NEXT]
 <!-- .slide: class="large-slide" -->
-Only use **mean reversion** strategy when stocks are hovering around mean.
+Only use **mean reversion** strategy when stocks are hovering around the same price.
+
+[NEXT]
+<!-- .slide: class="large-slide" -->
+**NOT** when the price changes to fundamental market shifts.
+
+_note_
+For example, if all stocks in tech industry increase at same time.
 
 [NEXT]
 ![subtracting_market_impact_one_panel](images/subtracting_market_impact1.svg)
@@ -473,7 +472,24 @@ Apply mean reversion strategy to:
 
 [NEXT]
 <!-- .slide: class="large-slide" -->
-Avoid losing money during **momentum** price movements.
+# Unexplained Returns
+
+Represents the movements in stock price we can't explain by other market movements.
+
+[NEXT]
+# Example
+
+<div class="fragment" data-fragment-index="0">
+Apple decreases in price, other tech company stocks don't.
+</div>
+<br/>
+<div class="fragment" data-fragment-index="1">
+We can't explain the decrease. We assume it's noise.
+</div>
+<br/>
+<div class="fragment" data-fragment-index="2">
+Buy Apple, assuming price will revert to mean and increase tomorrow.
+</div>
 
 [NEXT]
 # Beware...
@@ -496,25 +512,8 @@ Adjusting returns using stock correlations is the **hardest** step.
 ![python](images/python.svg)
 
 [NEXT]
-### Short Term Strategy
-
-Whenever we buy or borrow a stock...
-
-...we only keep it for **one day**!
-
-[NEXT]
-### Trading Universe
-
-Every day, we choose 4000 out of the 7000 stocks to trade.
-
-Pick the 4000 most traded stocks.
-
-This is our **trading universe**. We only ever trade these stocks.
-
-[NEXT]
 Every weekday just before the US stock market closes:
 
-0. choose 4000 stocks to consider trading <!-- .element: class="hidden" -->
 1. calculate each stock's daily returns for the past year  <!-- .element: class="hidden" -->
 2. calculate correlation between each stock's returns <!-- .element: class="hidden" -->
 3. use correlations and yesterday's returns to decide how much to buy/sell of each stock <!-- .element: class="hidden" -->
@@ -524,17 +523,6 @@ Every weekday just before the US stock market closes:
 [NEXT]
 Every weekday just before the US stock market closes:
 
-0. choose 4000 stocks to consider trading <!-- .element: class="focus" -->
-1. calculate each stock's daily returns for the past year  <!-- .element: class="hidden" -->
-2. calculate correlation between each stock's returns <!-- .element: class="hidden" -->
-3. use correlations and yesterday's returns to decide how much to buy/sell of each stock <!-- .element: class="hidden" -->
-4. buy/sell decided stocks <!-- .element: class="hidden" -->
-5. wait until tomorrow, then get rid of stocks bought/borrowed <!-- .element: class="hidden" -->
-
-[NEXT]
-Every weekday just before the US stock market closes:
-
-0. choose 4000 stocks to consider trading <!-- .element: class="previous" -->
 1. calculate each stock's daily returns for the past year  <!-- .element: class="focus" -->
 2. calculate correlation between each stock's returns <!-- .element: class="hidden" -->
 3. use correlations and yesterday's returns to decide how much to buy/sell of each stock <!-- .element: class="hidden" -->
@@ -544,7 +532,6 @@ Every weekday just before the US stock market closes:
 [NEXT]
 Every weekday just before the US stock market closes:
 
-0. choose 4000 stocks to consider trading <!-- .element: class="previous" -->
 1. calculate each stock's daily returns for the past year  <!-- .element: class="previous" -->
 2. calculate correlation between each stock's returns <!-- .element: class="focus" -->
 3. use correlations and yesterday's returns to decide how much to buy/sell of each stock <!-- .element: class="hidden" -->
@@ -554,7 +541,6 @@ Every weekday just before the US stock market closes:
 [NEXT]
 Every weekday just before the US stock market closes:
 
-0. choose 4000 stocks to consider trading <!-- .element: class="previous" -->
 1. calculate each stock's daily returns for the past year  <!-- .element: class="previous" -->
 2. calculate correlation between each stock's returns <!-- .element: class="previous" -->
 3. use correlations and yesterday's returns to decide how much to buy/sell of each stock <!-- .element: class="focus" -->
@@ -564,7 +550,6 @@ Every weekday just before the US stock market closes:
 [NEXT]
 Every weekday just before the US stock market closes:
 
-0. choose 4000 stocks to consider trading <!-- .element: class="previous" -->
 1. calculate each stock's daily returns for the past year  <!-- .element: class="previous" -->
 2. calculate correlation between each stock's returns <!-- .element: class="previous" -->
 3. use correlations and yesterday's returns to decide how much to buy/sell of each stock <!-- .element: class="previous" -->
@@ -574,7 +559,6 @@ Every weekday just before the US stock market closes:
 [NEXT]
 Every weekday just before the US stock market closes:
 
-0. choose 4000 stocks to consider trading <!-- .element: class="previous" -->
 1. calculate each stock's daily returns for the past year  <!-- .element: class="previous" -->
 2. calculate correlation between each stock's returns <!-- .element: class="previous" -->
 3. use correlations and yesterday's returns to decide how much to buy/sell of each stock <!-- .element: class="previous" -->
@@ -586,7 +570,7 @@ Every weekday just before the US stock market closes:
 ![one_day_holding](images/one_day_holding.svg)
 
 [NEXT]
-## Simulation
+# Simulation
 
 Simulate how much money our trading algo would have made historically.
 
@@ -850,17 +834,6 @@ array([[0., 1.],
 ```
 
 ![ndarray](images/ndarray_4.svg)
-
-[NEXT]
-### Slicing Multiple Dimensions
-
-```python
->>> b[:2, :2]
-array([[0., 1.],
-       [3., 4.]])
-```
-
-![ndarray](images/ndarray_5.svg)
 
 [NEXT]
 <!-- .slide: class="medium-slide" -->
