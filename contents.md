@@ -632,15 +632,8 @@ Simulating date 1990-01-04: day's return is 0.0057%
 ![pnl](images/pnl_total_early.svg)
 
 [NEXT]
-## Summary at End of 2001
-
-<span class="large-pnl">**Returns:** <span class="profit">%27.70</span></span>
-
-|                        |          |
-| ---------------------- | -------- |
-| **Initial Investment** | $300,000 |
-| **Current Value**      | $383,100 |
-| **Total Profit**       | $83,100  |
+# 1990 -> 2001 Returns
+<span class="profit" style="font-size: 100px">16.84%</span>
 
 [NEXT]
 # Success!
