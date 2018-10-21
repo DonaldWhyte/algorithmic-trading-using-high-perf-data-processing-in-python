@@ -12,6 +12,7 @@
 </div>
 
 [NEXT]
+<!-- .slide: data-background="images/intro_background.png" class="background" -->
 ### About Me
 
 <div class="left-col">
@@ -266,14 +267,11 @@ Build an program that generates lists of trades to make.
 
 [NEXT]
 <!-- .slide: class="medium-slide" -->
-# Disclaimer!
+# ⚠️ Disclaimer! ⚠️
 
 The following strategy is for demonstration purposes only.
 
-Don't take it as real investment/trading advice.
-
-_note_
-TODO: add warning sign unicode to the slides!
+Don't take it as real investment advice.
 
 [NEXT]
 <!-- .slide: class="large-slide" -->
@@ -711,13 +709,11 @@ Every day, these steps are run:
 
 [NEXT]
 ## Operations Required
-
-| Step            | **Complexity** | **Per Day** | **Full Simulation** |
-| --------------- | -------------- | ------------| ------------------- |
-| **Returns**     | `O(n)`         | TIME        | TIME                |
-| **Correlation** | `O(n^2)`       | TIME        | TIME                |
-| **Decision**    | `O(n^3)`       | TIME        | TIME                |
-
+| Step            | **Per Day**    | **Full Simulation** |
+| --------------- | -------------- | ------------------- |
+| **Returns**     | 11 million     | 80 billion          |
+| **Correlation** | 10 billion     | 72.78 trillion      |
+| **Decision**    | 17.5 billion   | 127.37 trillion     |
 <div class="source">
   <p>
     <strong>operation</strong> is defined as an:
@@ -729,8 +725,7 @@ Every day, these steps are run:
 [NEXT]
 <!-- .slide: class="large-slide" -->
 # Total Operations
-
-TIME
+~200 trillion
 
 [NEXT]
 ## Trading Simulation
@@ -1170,7 +1165,7 @@ Use bulk matrix-based operations using NumPy.
 # The NumPy Code
 
 [NEXT]
-<pre class="large"><code data-noescape class="python"># Construct empty date x symbol price matrix.
+<pre class="large"><code data-noescape class="python"># Construct empty date x stock price matrix.
 price_matrix = np.zeros(shape=(num_dates_in_sim,
                                num_stocks))
 
@@ -1184,7 +1179,7 @@ returns = (price_matrix - shifted_prices)
 </code></pre>
 
 [NEXT]
-<pre class="large"><code data-noescape class="python"># Construct empty date x symbol price matrix.
+<pre class="large"><code data-noescape class="python"># Construct empty date x stock price matrix.
 <mark>price_matrix = np.zeros(shape=(num_dates_in_sim,
                                num_stocks))</mark>
 
@@ -1198,7 +1193,7 @@ returns = (price_matrix - shifted_prices)
 </code></pre>
 
 [NEXT]
-<pre class="large"><code data-noescape class="python"># Construct empty date x symbol price matrix.
+<pre class="large"><code data-noescape class="python"># Construct empty date x stock price matrix.
 price_matrix = np.zeros(shape=(num_dates_in_sim,
                                num_stocks))
 
@@ -1212,7 +1207,7 @@ returns = (price_matrix - shifted_prices)
 </code></pre>
 
 [NEXT]
-<pre class="large"><code data-noescape class="python"># Construct empty date x symbol price matrix.
+<pre class="large"><code data-noescape class="python"># Construct empty date x stock price matrix.
 price_matrix = np.zeros(shape=(num_dates_in_sim,
                                num_stocks))
 
@@ -1226,7 +1221,7 @@ returns = (price_matrix - shifted_prices)
 </code></pre>
 
 [NEXT]
-<pre class="large"><code data-noescape class="python"># Construct empty date x symbol price matrix.
+<pre class="large"><code data-noescape class="python"># Construct empty date x stock price matrix.
 price_matrix = np.zeros(shape=(num_dates_in_sim,
                                num_stocks))
 
@@ -1257,9 +1252,6 @@ Complete returns matrix is sized **7000 x 7000**.
 ## Speedup
 #### Calculating All Returns
 <div id="numpy-returns-speedup"></div>
-
-_note_
-TIME: poplate these graphs
 
 [NEXT]
 <!-- .slide: class="large-slide" -->
