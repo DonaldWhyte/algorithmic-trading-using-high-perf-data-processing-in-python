@@ -1,15 +1,10 @@
 <!-- .slide: data-background="images/intro_background.png" class="background" -->
-### **Высокоэффективная обработка данных в Phyton**
-
-#### High Performance Data Processing In Python
+## Algorithmic Trading
+#### Using High-Performance Data Processing in Python
 
 <p>
   <a href="http://twitter.com/donald_whyte">@donald_whyte</a>
 </p>
-
-<div id="logo-notice">
-  <img src="images/moscow_python_confpp.png" alt="moscow_python_confpp" />
-</div>
 
 [NEXT]
 <!-- .slide: data-background="images/intro_background.png" class="background" -->
