@@ -1,4 +1,4 @@
-# Algorithmic Trading Using High-Performance Data Processing in Python
+## Algorithmic Trading Using High-Performance Data Processing in Python
 
 ### [View Presentation Slides](http://donaldwhyte.github.io/algorithmic-trading-using-high-perf-data-processing-in-python)
 
