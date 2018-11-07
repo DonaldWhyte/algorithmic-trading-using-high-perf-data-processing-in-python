@@ -1528,16 +1528,10 @@ Otherwise, you can get **very** far with vectorisation and sprinkling
 `@numba.jit` magic.
 
 [NEXT]
-# Спасибо!
+<!-- .slide: class="medium-slide" -->
+# Link to the Slides
 
-[NEXT]
-<!-- .slide: class="small-slide" -->
-# Links
-
-* these slides:
-  - http://donsoft.io/high-performance-data-processing-in-python-v2
-* example code from this talk:
-  - https://github.com/DonaldWhyte/high-performance-data-processing-in-python-v2/tree/master/code
+http://donsoft.io/algorithmic-trading-using-high-perf-data-processing-in-python
 
 [NEXT]
 # Get In Touch

@@ -1,6 +1,7 @@
-# High Performance Data Processing in Python V2.0
+# Algorithmic Trading
+## Using High-Performance Data Processing in Python
 
-### [View Presentation Slides](http://donaldwhyte.github.io/high-performance-data-processing-in-python-v2)
+### [View Presentation Slides](http://donaldwhyte.github.io/algorithmic-trading-using-high-perf-data-processing-in-python)
 
 Talk demonstrating how to massively optimise data processing and numerical computation in Python. We build an automated US stock trading strategy using stock pricing data for 7000 stocks. We take running historical simulations of this strategy from one month to less than an hour.
 
