@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Algorithmic Trading Using High-Performance Data Processing in Python</title>
+
+    <meta name="description" content="Talk demonstrating how to massively optimise data processing and numerical computation in Python for use in algorithmic stock trading">
+    <meta name="author" content="Donald Whyte">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/white.css" id="theme">
+    <!--<link rel="stylesheet" href="css/print/pdf.css">-->
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+    link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi )
+        ? 'css/print/pdf.css'
+        : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="contents.md"
+                 data-separator="^\[NEXT SECTION\]"
+                 data-separator-vertical="^\[NEXT\]"
+                 data-separator-notes="^_note_">
+        </section>
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <!-- Custom JS libraries -->
+    <script src="lib/js/jquery-3.2.1.min.js"></script>
+    <!-- TOOD: download locally -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/series-label.js"></script>
+
+    <!-- Reveal initialisation -->
+    <script>
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'none', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true },
+          {
+            src: 'plugin/external/external.js',
+            condition: function() {
+              return !!document.querySelector('[data-external]');
+            }
+          }
+        ]
+      });
+
+      // FUNCTIONS
+      function load_chart_event() {
+        $("text:contains('Highcharts.com')").remove();
+      }
+
+      function sum(arr) {
+        s = 0.0;
+        for (var i in arr) {
+          s += arr[i];
+        }
+        return s
+      }
+
+      function create_bar_chart(container_id,
+                                series,
+                                categories,
+                                y_axis_label,
+                                y_axis_label_formatter,
+                                theme,
+                                show_legend,
+                                show_value_labels,
+                                value_label_formatter,
+                                use_log_axis)
+      {
+        console.log('Rendering chart: ' + container_id);
+
+        const label_colour = {
+          'light': 'white',
+          'dark': 'black'
+        }[theme];
+
+        if (show_legend) {
+          var legend = {
+            x: 0,
+            itemStyle: {
+              fontSize: 22,
+              color: label_colour
+            },
+            symbolHeight: 18,
+          };
+          var chart_margin_bottom = 100;
+          var axis_label_size = '22px';
+        } else {
+          var legend = {enabled: false};
+          var chart_margin_bottom = 32;
+          var axis_label_size = '28px';
+        }
+
+        const plot_options = {
+          column: {
+            pointPadding: 0.2,
+            borderWidth: 0
+          }
+        };
+        if (show_value_labels) {
+          if (theme === 'light') {
+            value_label_colour = 'white';
+          } else {
+            value_label_colour = 'black';
+          }
+          plot_options.series =  {
+            dataLabels: {
+              enabled: true,
+              formatter: value_label_formatter,
+              align: 'center',
+              color: value_label_colour,
+              shadow: false
+            }
+          };
+        }
+
+        const y_axis_config = {
+          title: {
+            text: y_axis_label,
+            style: {
+              color: label_colour,
+              'font-weight': 'strong',
+              'font-size': axis_label_size
+            }
+          },
+          labels: {
+            formatter: y_axis_label_formatter,
+            style: {
+              color: label_colour,
+              'font-weight': 'strong',
+              'font-size': '18px'
+            }
+          }
+        };
+        if (use_log_axis === true) {
+          y_axis_config.type = 'logarithmic';
+        } else {
+          y_axis_config.min = 0;
+        }
+
+        console.log('Creating chart in container ' + container_id);
+
+        return Highcharts.chart(container_id, {
+          chart: {
+            type: 'column',
+            backgroundColor: 'rgba(0, 0, 0, 0)',
+            events: { load: load_chart_event },
+            marginTop: 64,
+            marginBottom: chart_margin_bottom
+          },
+          title: { text: '' },
+          xAxis: {
+            categories: categories,
+            crosshair: true,
+            labels: {
+              style: {
+                color: label_colour,
+                'font-weight': 'strong',
+                'font-size': '18px'
+              }
+            }
+          },
+          yAxis: y_axis_config,
+          legend: legend,
+          tooltip: { enabled: false },
+          exporting: { enabled: false },
+          plotOptions: plot_options,
+          series: series
+        });
+      }
+
+      Reveal.addEventListener('ready', function(event) {
+        Highcharts.setOptions({
+            lang: {
+                thousandsSep: ''
+            }
+        });
+
+        const seconds_label_formatter = function() {
+          return Highcharts.numberFormat(this.y, 2)  + 's';
+        };
+        const minutes_label_formatter = function() {
+          return Highcharts.numberFormat(this.y, 2)  + 'm';
+        };
+        const days_label_formatter = function() {
+          return Highcharts.numberFormat(this.y, 2) + 'd';
+        };
+        const speedup_label_formatter = function() {
+          return Highcharts.numberFormat(this.y, 1) + 'X';
+        };
+
+        const days_axis_label = 'execution time (days)';
+        const days_axis_formatter = function () { return this.value + 'd'; };
+
+        const minutes_axis_label = 'execution time (minutes)';
+        const minutes_axis_formatter = function () { return this.value + 'm'; };
+
+        const speedup_axis_label = 'speedup factor';
+        const speedup_axis_formatter = function () { return this.value + 'x'; };
+
+        const benchmark_sections = [
+          'pidigits',
+          'regex-redux',
+          'r-complement',
+          'k-nucleotide',
+          'binary-trees',
+          'fasta'
+        ];
+        const cpython_times = [3.52, 15.57, 21.71, 79.61, 92.78, 61.81];
+        const c_times = [1.75, 1.5, 1.75, 5.07, 2.54, 1.32];
+        const cpython_vs_c_speedups = [];
+        for (var i in cpython_times) {
+          cpython_vs_c_speedups.push(cpython_times[i] / c_times[i]);
+        }
+
+        create_bar_chart(
+          'python-vs-c-speedups',
+          [
+            {name: 'C Speedups', color: '#FF0000', data: cpython_vs_c_speedups}
+          ],
+          benchmark_sections,
+          speedup_axis_label,
+          speedup_axis_formatter,
+          'dark',
+          false,
+          true,
+          speedup_label_formatter);
+
+        const timing_sections = [
+          'returns',
+          'correlation',
+          'decision'
+        ];
+        const pure_python_times = {
+            name: 'Pure Python',
+            color: 'green',
+            data: [0.446296468, 406.018211, 710.559764]
+        };
+        const numpy_times = {
+          name: 'NumPy',
+          color: 'blue',
+          data: [0.0056, 0.21056, 2.6125]
+        };
+
+        const numba_times = {
+          name: 'NumPy + Numba',
+          color: 'purple',
+          data: [0.0056, 0.21056, 0.36734]
+        };
+
+        create_bar_chart(
+          'purepython-times', [pure_python_times],
+          timing_sections, days_axis_label, days_axis_formatter, 'dark',
+          true, true, days_label_formatter, true);
+
+        create_bar_chart(
+          'numpy-times', [pure_python_times, numpy_times],
+          timing_sections, days_axis_label, days_axis_formatter, 'dark',
+          true, true, days_label_formatter, true);
+
+        const numpy_unvectorisable_highlighted = JSON.parse(
+          JSON.stringify(numpy_times));
+        numpy_unvectorisable_highlighted.data[2] = {y: numpy_times.data[2], color: 'red'};
+        create_bar_chart(
+          'numpy-times-unvectorisable-highlighted',
+          [numpy_unvectorisable_highlighted],
+          timing_sections, days_axis_label, days_axis_formatter, 'dark',
+          false, true, days_label_formatter);
+
+        create_bar_chart(
+          'numba-times', [numpy_times, numba_times],
+          timing_sections, days_axis_label, days_axis_formatter, 'dark',
+          true, true, days_label_formatter);
+        create_bar_chart(
+          'numba-times', [numpy_times, numba_times],
+          timing_sections, days_axis_label, days_axis_formatter, 'dark',
+          true, true, days_label_formatter);
+
+
+        const total_time_sections = [
+          'Pure Python',
+          'Numpy',
+          'Numpy + Numba'
+        ];
+        const original_total_time = sum(pure_python_times.data);
+        create_bar_chart(
+          'total-times',
+          [
+            {
+              color: 'blue',
+              data: [
+                original_total_time,
+                sum(numpy_times.data),
+                sum(numba_times.data),
+              ]
+            }
+          ],
+          total_time_sections,
+          days_axis_label, days_axis_formatter, 'dark',
+          false, true, days_label_formatter, true);
+
+        const total_speedups = [
+          original_total_time / original_total_time,
+          original_total_time / sum(numpy_times.data),
+          original_total_time / sum(numba_times.data),
+        ];
+        create_bar_chart(
+          'total-speedups',
+          [
+            {
+              color: 'red',
+              data: [
+                original_total_time / original_total_time,
+                original_total_time / sum(numpy_times.data),
+                original_total_time / sum(numba_times.data)
+              ]
+            }
+          ],
+          total_time_sections,
+          speedup_axis_label, speedup_axis_formatter, 'dark',
+          false, true, speedup_label_formatter, false);
+
+        just_returns_sections = [timing_sections[0]];
+        pure_python_just_returns_times = JSON.parse(
+            JSON.stringify(pure_python_times));
+        // convert days to minutes
+        pure_python_just_returns_times.data[0] *= 24 * 60
+        pure_python_just_returns_times.data.length = 1;
+
+        numpy_just_returns_times = JSON.parse(
+            JSON.stringify(numpy_times));
+        numpy_just_returns_times.data.length = 1;
+        // convert days to minutes
+        numpy_just_returns_times.data[0] *= 24 * 60
+
+        create_bar_chart(
+          'numpy-returns-times',
+          [pure_python_just_returns_times, numpy_just_returns_times],
+          just_returns_sections,
+          minutes_axis_label, minutes_axis_formatter, 'dark',
+          true, true, minutes_label_formatter);
+
+        const pure_python_just_returns_speedups = {
+            name: 'Pure Python',
+            color: 'green',
+            data: [1.0]
+        };
+        const numpy_just_returns_speedups = {
+          name: 'NumPy',
+          color: 'blue',
+          data: [pure_python_just_returns_times.data[0] /
+                 numpy_just_returns_times.data[0]]
+        };
+        create_bar_chart(
+          'numpy-returns-speedup',
+          [pure_python_just_returns_speedups, numpy_just_returns_speedups],
+          just_returns_sections,
+          speedup_axis_label, speedup_axis_formatter, 'dark',
+          true, true, speedup_label_formatter);
+
+        create_bar_chart(
+          'basic-numpy-benchmark-times',
+          [
+            {
+              name: 'timings',
+              color: 'blue',
+              data: [1.0996, 3.4815, 0.0305]
+            }
+          ],
+          ['python (indexing)', 'numpy (loop)', 'numpy (built-in)'],
+          'execution time (secs)',
+          function () { return this.value + 's'; },
+          'dark',
+          false,
+          true,
+          seconds_label_formatter);
+        create_bar_chart(
+          'basic-numpy-benchmark-speedup',
+          [
+            {
+              name: 'speedup',
+              color: 'red',
+              data: [
+                1.0996 / 1.0996,
+                1.0996 / 3.4815,
+                1.0996 / 0.0305
+              ]
+            }
+          ],
+          ['python (indexing)', 'numpy (loop)', 'numpy (built-in)'],
+          'speedup factor',
+          function () { return this.value; },
+          'dark',
+          false,
+          true,
+          speedup_label_formatter);
+
+        const numba_sections = [
+            'python',
+            'numba (inferred types)',
+            'numba (explicit types)',
+            'pure numpy'
+        ];
+        const numba_benchmark_times = [1.7544, 0.0065, 0.0065, 0.0091];
+        const numba_benchmark_speedups = [
+            1.7544 / 1.7544, 1.7544 / 0.0065, 1.7544 / 0.0065, 1.7544 / 0.0091
+        ];
+
+        create_bar_chart(
+          'numba-benchmark-times1',
+          [{name: 'timings', color: 'blue', data: numba_benchmark_times.slice(0, 2)}],
+          numba_sections.slice(0, 2),
+          'execution time (secs)',
+          function () { return this.value + 's'; },
+          'dark',
+          false,
+          true,
+          function() {
+            return Highcharts.numberFormat(this.y, 4) + 's';
+          });
+        create_bar_chart(
+          'numba-benchmark-speedup1',
+          [{name: 'speedup', color: 'red', data: numba_benchmark_speedups.slice(0, 2)}],
+          numba_sections.slice(0, 2),
+          'speedup factor',
+          function () { return this.value; },
+          'dark',
+          false,
+          true,
+          speedup_label_formatter);
+      });
+    </script>
+
+  </body>
+</html>

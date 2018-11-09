@@ -1,0 +1,409 @@
+.reveal section img {
+    border: 0px;
+    box-shadow: none;
+    background-color: rgba(255, 255, 255, 0.0);
+    margin: 0px;
+}
+
+/* Title */
+#logo-notice {
+    position: relative;
+    float: right;
+}
+
+#logo-notice p {
+    font-size: 18px;
+    text-align: center;
+}
+
+.highcharts-label text {
+    font-size: 26px !important;
+}
+
+img[alt="moscow_python_confpp"] {
+    width: 300px;
+    margin: 0px !important;
+}
+
+/* Background Slides */
+.background h1,
+.background h2,
+.background h3,
+.background h4,
+.background h5,
+.background p,
+.background li,
+.background em,
+.background strong,
+.background td,
+.background tr,
+.background th
+.background
+{
+    color: white !important;
+}
+
+.background blockquote {
+    background-color: rgba(255, 255, 255, 0.075);
+}
+
+.background a {
+    color: #4c98ff;
+}
+
+/* Multi-column Layout */
+
+.left-col {
+    width: 50%;
+    float: left;
+}
+
+.right-col {
+    width: 50%;
+    float: right;
+}2
+
+.left-col1of3 {
+    width: 33%;
+    float: left;
+}
+
+.right-col2of3 {
+    width: 66%;
+    float: left;
+}
+
+.clear-col {
+    float: none;
+    clear: both;
+}
+
+/* Font Styling */
+
+code {
+    color: #00D;
+    font-weight: bold !important;
+}
+
+.code-header {
+    font-size: 55px !important;
+}
+
+.very-large code {
+    font-size: 30px;
+    line-height: 40px;
+}
+
+.large code {
+    font-size: 25px;
+    line-height: 30px;
+}
+
+.largish code {
+    font-size: 24px;
+    line-height: 26px;
+}
+
+.medium code {
+    font-size: 18px;
+    line-height: 20px;
+}
+
+.medium-large code {
+    font-size: 20px;
+    line-height: 22px;
+}
+
+.small p {
+    font-size: 36px;
+}
+
+.small code {
+    font-size: 16px;
+    line-height: 18px;
+}
+
+.small-table-text td, .small-table-text th {
+    font-size: 20px;
+}
+
+.medium-table-text td, .medium-table-text th {
+    font-size: 26px;
+}
+
+.bio-table td {
+    text-align: center !important;
+    border: 0px !important;
+    max-width: 400px;
+}
+
+.bad-row td {
+    color: red;
+    font-weight: bold;
+}
+
+.good-row td {
+    color: green;
+    font-weight: bold;
+}
+
+.big-emphasis {
+    color: red;
+    font-weight: bold !important;
+}
+
+.large-pnl {
+    font-size: 64px !important;
+}
+
+.profit {
+    color: green;
+    font-weight: bold !important;
+}
+
+.loss {
+    color: red;
+    font-weight: bold !important;
+}
+
+/* Slide-wide styles. */
+.small-slide p,
+.small-slide ul,
+.small-slide li
+{
+    font-size: 32px !important;
+}
+
+.medium-slide p,
+.medium-slide ul,
+.medium-slide li
+{
+    font-size: 50px !important;
+}
+
+.large-slide p,
+.large-slide ul,
+.large-slide li
+{
+    font-size: 60px !important;
+}
+
+.highlighted-inline {
+    background-color: #888;
+}
+
+.highlighted {
+    color: black;
+    font-weight: bold !important;
+}
+
+code .highlighted {
+    border: 5px solid black;
+    padding: 8px;
+}
+
+.reference {
+    float: right;
+    text-align: right;
+    font-size: 32px !important;
+    margin-top: 32px !important;
+}
+
+.source {
+    margin-top: 32px !important;
+    font-size: 28px !important;
+}
+
+li.hidden {
+    color: rgba(0, 0, 0, 0) !important;
+}
+
+li.focus {
+    color: black;
+    font-weight: bold;
+}
+
+li.previous {
+    color: #aaa;
+}
+
+.hidden-table td {
+    color: white;
+    border-bottom-color: black !important;
+}
+
+.hidden-table td strong {
+    color: black;
+    border: black;
+}
+
+/* For highlighting specific lines in code formatted using hljs */
+code mark {
+    display: inline-block;
+    width: 100%;
+    background: yellow;
+    color: black;
+}
+
+code mark span {
+    background: none !important;
+    color: inherit !important;
+}
+
+/* Images */
+img[alt="portrait"] {
+    width: 250px;
+    border: 2px solid black !important;
+}
+
+img[alt="small_portrait"] {
+    width: 220px;
+    border: 2px solid black !important;
+}
+
+img[alt="research_use_case"] {
+    width: 100px;
+    padding: 16px;
+}
+
+img[alt="bad_construction"] {
+    width: 400px;
+    padding: 16px;
+}
+
+img[alt="anger"] {
+    width: 500px;
+}
+
+img[alt="ecosystem"] {
+    width: 500px;
+}
+
+img[alt="numpy_coloured"] {
+    width: 200px;
+}
+
+img[alt="scipy"] {
+    width: 110px;
+    padding: 16px;
+}
+
+img[alt="pandas"] {
+    width: 200px;
+    padding: 16px;
+}
+
+img[alt="sklearn"] {
+    width: 180px;
+    padding: 16px;
+}
+
+img[alt="matplotlib"] {
+    width: 300px;
+    padding: 16px;
+}
+
+img[alt="quant"] {
+    width: 500px;
+}
+
+img[alt="daily_prices"] {
+    width: 600px;
+}
+
+img[alt="daily_price_files"] {
+    width: 1000px;
+}
+
+img[alt="price_csv"] {
+    width: 740px;
+}
+
+img[alt="aapl_price_graph"] {
+    width: 800px;
+}
+
+img[alt="equation"] {
+    width: 750px;
+}
+
+img[alt="mean_reversion"] {
+    width: 900px;
+}
+
+img[alt="reversion_example_aapl"] {
+    width: 900px;
+}
+
+img[alt="reversion_example_trading"] {
+    width: 900px;
+}
+
+img[alt="price_momentum"] {
+    width: 700px;
+}
+
+img[alt="subtracting_market_impact_full"] {
+    width: 650px;
+}
+
+img[alt="stats_techniques_for_stat_arb"] {
+    margin-top: 32px !important;
+}
+
+img[alt="one_day_holding"] {
+    width: 700px;
+}
+
+img[alt="price_correlation"] {
+    width: 800px;
+}
+
+img[alt="pnl"] {
+    width: 700px;
+}
+
+img[alt="python_slow_1"] {
+    width: 500px;
+}
+
+img[alt="python_slow_2"] {
+    width: 750px;
+}
+
+img[alt="numpy_add_loop"],
+img[alt="numpy_add_native"]
+{
+    width: 600px;
+}
+
+img[alt="numpy_example_price_matrix"] {
+    width: 800px;
+}
+
+img[alt="numpy_example_returns_matrix_detail"] {
+    width: 1200px;
+}
+
+img[alt="numpy_example_returns_matrix_calc_small"] {
+    width: 850px;
+}
+
+img[alt="sisd"],
+img[alt="simd"] {
+    width: 500px;
+    margin: 32px !important;
+}
+
+/* Section Heading Icons */
+img[alt="upward_trend"],
+img[alt="python"],
+img[alt="numpy"],
+img[alt="vectorisation"],
+img[alt="numba"],
+img[alt="final_timings"],
+img[alt="fin"] {
+    width: 200px;
+    position: relative;
+    top: 30px !important;
+}
