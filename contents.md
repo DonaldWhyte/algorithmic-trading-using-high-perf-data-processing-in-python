@@ -724,12 +724,47 @@ Source for upcoming sections: https://jakevdp.github.io/blog/2014/05/09/why-pyth
 ## Dynamic Typing
 
 [NEXT]
+<!-- .slide: class="medium-slide" -->
+Python's interpreter doesn't know the type of the variables in advance.
+
+[NEXT]
+![python_slow_1](images/python_slow_1.png)
+
+[NEXT]
+More instructions needed for any operation.
+
+**Primary reason** Python is slower than C or other compiled languages
+for processing numerical data.
+
+[NEXT]
 # Reason 2
 ## Interpreted, not Compiled
 
 [NEXT]
+<!-- .slide: class="medium-slide" -->
+Python code is interpreted at **runtime**.
+
+Not compiled.
+
+Compilers are able to **optimise** code in advance.
+
+_note_
+See section 5 to learn see how compiling Python code can dramatically speed up
+code.
+
+[NEXT]
 # Reason 3
 ## Fragmented Memory Access
+
+[NEXT]
+![python_slow_2](images/python_slow_2.png)
+
+[NEXT]
+Bad for code that steps through **data in sequence**.
+
+Iterate through a single list accesses completely different regions of memory.
+
+Not **cache friendly**.
 
 [NEXT]
 ## How can we do better?
