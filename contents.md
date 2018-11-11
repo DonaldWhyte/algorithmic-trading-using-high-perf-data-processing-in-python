@@ -511,7 +511,7 @@ Every weekday just before the US stock market closes:
 
 1. calculate each stock's daily returns for the past year  <!-- .element: class="hidden" -->
 2. calculate correlation between each stock's returns <!-- .element: class="hidden" -->
-3. use correlations and yesterday's returns to decide how much to buy/sell of each stock <!-- .element: class="hidden" -->
+3. use correlations and returns to decide how much to buy/sell of each stock <!-- .element: class="hidden" -->
 4. buy/sell decided stocks <!-- .element: class="hidden" -->
 5. wait until tomorrow, then get rid of stocks bought/borrowed <!-- .element: class="hidden" -->
 
@@ -520,7 +520,7 @@ Every weekday just before the US stock market closes:
 
 1. calculate each stock's daily returns for the past year  <!-- .element: class="focus" -->
 2. calculate correlation between each stock's returns <!-- .element: class="hidden" -->
-3. use correlations and yesterday's returns to decide how much to buy/sell of each stock <!-- .element: class="hidden" -->
+3. use correlations and returns to decide how much to buy/sell of each stock <!-- .element: class="hidden" -->
 4. buy/sell decided stocks <!-- .element: class="hidden" -->
 5. wait until tomorrow, then get rid of stocks bought/borrowed <!-- .element: class="hidden" -->
 
@@ -529,7 +529,7 @@ Every weekday just before the US stock market closes:
 
 1. calculate each stock's daily returns for the past year  <!-- .element: class="previous" -->
 2. calculate correlation between each stock's returns <!-- .element: class="focus" -->
-3. use correlations and yesterday's returns to decide how much to buy/sell of each stock <!-- .element: class="hidden" -->
+3. use correlations and returns to decide how much to buy/sell of each stock <!-- .element: class="hidden" -->
 4. buy/sell decided stocks <!-- .element: class="hidden" -->
 5. wait until tomorrow, then get rid of stocks bought/borrowed <!-- .element: class="hidden" -->
 
@@ -538,7 +538,7 @@ Every weekday just before the US stock market closes:
 
 1. calculate each stock's daily returns for the past year  <!-- .element: class="previous" -->
 2. calculate correlation between each stock's returns <!-- .element: class="previous" -->
-3. use correlations and yesterday's returns to decide how much to buy/sell of each stock <!-- .element: class="focus" -->
+3. use correlations and returns to decide how much to buy/sell of each stock <!-- .element: class="focus" -->
 4. buy/sell decided stocks <!-- .element: class="hidden" -->
 5. wait until tomorrow, then get rid of stocks bought/borrowed <!-- .element: class="hidden" -->
 
@@ -547,7 +547,7 @@ Every weekday just before the US stock market closes:
 
 1. calculate each stock's daily returns for the past year  <!-- .element: class="previous" -->
 2. calculate correlation between each stock's returns <!-- .element: class="previous" -->
-3. use correlations and yesterday's returns to decide how much to buy/sell of each stock <!-- .element: class="previous" -->
+3. use correlations and returns to decide how much to buy/sell of each stock <!-- .element: class="previous" -->
 4. buy/sell decided stocks <!-- .element: class="focus" -->
 5. wait until tomorrow, then get rid of stocks bought/borrowed <!-- .element: class="hidden" -->
 
@@ -556,7 +556,7 @@ Every weekday just before the US stock market closes:
 
 1. calculate each stock's daily returns for the past year  <!-- .element: class="previous" -->
 2. calculate correlation between each stock's returns <!-- .element: class="previous" -->
-3. use correlations and yesterday's returns to decide how much to buy/sell of each stock <!-- .element: class="previous" -->
+3. use correlations and returns to decide how much to buy/sell of each stock <!-- .element: class="previous" -->
 4. buy/sell decided stocks <!-- .element: class="previous" -->
 5. wait until tomorrow, then get rid of stocks bought/borrowed <!-- .element: class="focus" -->
 
@@ -667,7 +667,7 @@ Every day, these steps are run:
 | ------ | --------------- | ------------------------------------------------------ |
 | **1.** | **Returns**     | calculate each stock's daily returns for the past year |
 | **2.** | **Correlation** | calculate correlation between each stock's returns     |
-| **3.** | **Decision**    | use correlations and yesterday's returns to decide which stocks buy/sell |
+| **3.** | **Decision**    | use correlations and returns to decide which stocks buy/sell |
 
 [NEXT]
 ### Computationally Heavy Steps
@@ -678,7 +678,7 @@ Every day, these steps are run:
 | ------ | --------------- | ------------------------------------------------------ |
 | **1.** | **Returns**     | calculate each stock's daily returns for the past year |
 | **2.** | **Correlation** | calculate correlation between each stock's returns     |
-| **3.** | **Decision**    | use correlations and yesterday's returns to decide which stocks buy/sell |
+| **3.** | **Decision**    | use correlations and returns to decide which stocks buy/sell |
 
 [NEXT]
 # How Much Computation is Required?
@@ -1019,7 +1019,7 @@ Every day, these steps are run:
 | ------ | --------------- | ------------------------------------------------------ |
 | **1.** | **Returns**     | calculate each stock's daily returns for the past year |
 | **2.** | **Correlation** | calculate correlation between each stock's returns     |
-| **3.** | **Decision**    | use correlations and yesterday's returns to decide which stocks buy/sell |
+| **3.** | **Decision**    | use correlations and returns to decide which stocks buy/sell |
 
 [NEXT]
 <!-- .slide: class="medium-slide" -->
@@ -1385,7 +1385,7 @@ Decorator that tells Numba to compile a function to native instructions.
 ### Summing an Array of Numbers
 
 ```python
-def sum_array(arr: List[str]):
+def sum_array(arr: List[int]):
     result = 0
     for i in range(len(arr)):
         result += arr[i]
@@ -1399,7 +1399,7 @@ def sum_array(arr: List[str]):
 <pre class="large"><code data-noescape class="python"><mark>from numba import jit</mark>
 
 <mark>@jit(nopython=True)</mark>
-def sum_array(arr: List[str]):
+def sum_array(arr: List[int]):
     result = 0
     for i in range(len(arr)):
         result += arr[i]
@@ -1427,7 +1427,7 @@ Uses types of arguments in function's first invocation.
 <pre class="large"><code data-noescape class="python">from numba import int64, jit
 
 <mark>@jit(int64(int64[:]), nopython=True)</mark>
-def sum_array(arr: List[str]):
+def sum_array(arr: List[int]):
     result = 0
     for i in range(len(arr)):
         result += arr[i]
