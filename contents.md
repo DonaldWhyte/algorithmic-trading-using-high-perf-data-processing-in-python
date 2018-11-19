@@ -270,7 +270,7 @@ Don't take it as real investment advice.
 
 [NEXT]
 <!-- .slide: class="large-slide" -->
-# Positive Note
+# Good News
 
 The strategy's high-level structure **does** reflect what many real world auotmated trading strategies do.
 
@@ -716,20 +716,20 @@ Every day, these steps are run:
 <!-- .slide: class="large-slide" -->
 Why is Python so slow?
 
+[NEXT]
+<!-- .slide: class="medium-slide" -->
+# Reasons
+
+1. Dynamic typing
+
+2. Interpreted, not compiled
+
+3. Fragmented memory access
+
 _note_
-Source for upcoming sections: https://jakevdp.github.io/blog/2014/05/09/why-python-is-slow/
-
-[NEXT]
-# Reason 1
-## Dynamic Typing
-
-[NEXT]
-# Reason 2
-## Interpreted, not Compiled
-
-[NEXT]
-# Reason 3
-## Fragmented Memory Access
+1. Dynamic typing increases CPU instructions required for each numerical operation
+2. Interpreted, not compiled
+3. Fragmented memory access caused by built-in Python data structures
 
 [NEXT]
 # How can we do better?
@@ -1169,82 +1169,22 @@ We use NumPy to perform similar optimisations for the **Correlation** and
 Expressing data in vector/matrix form opens up a new world of optimisations.
 
 [NEXT]
-# But also...
+<!-- .slide: class="medium-slide" -->
+# Vectorisation
 
-[NEXT SECTION]
-## 4. Vectorisation
-![vectorisation](images/vectorisation.svg)
-
-[NEXT]
-> Process of converting an algorithm from operating on a **single** value at a
-time to operating on a **set** of values at one time.
-
-_note_
-Source: https://software.intel.com/en-us/articles/vectorization-a-key-tool-to-improve-performance-on-modern-cpus
-
-[NEXT]
-Modern CPUs provide direct support for vector operations.
-
-A **single instruction** is applied to **multiple** data points.
-
-[NEXT]
-### Adding Two Vectors
-#### Single Instruction Single Data (SISD)
-
-![sisd](images/sisd.svg)
-
-Adding **_N_** numbers takes **_N_** instructions.
-
-[NEXT]
-### Adding Two Vectors
-#### Single Instruction Multiple Data (SIMD)
-
-![simd](images/simd.svg)
-
-Adding **_N_** numbers takes **_N / 4_** instructions.
-
-_note_
-Basically for you as a coder, SIMD allows to perform four operations
-(reading/writing/calculating) for the price of one instruction. The cost
-reduction is enabled by vectorization and data-parallelism. You don’t even have
-to handle threads and race conditions to gain this parallelism.
-
-[NEXT]
-### Vectorised Definitions
-
-| **Context**     |                                                                                     |
-| --------------- | ----------------------------------------------------------------------------------- |
-| **Native Code** | Apply single operations to multiple data items at once using special CPU registers. |
-| **Python**      | Keeping as much computation in `numpy`/native code as much as possible.             |
-
-Both involve making algorithms use array/vector/matrix based computation (not iterative).
-
-_note_
-Vectorization describes the absence of any explicit looping, indexing, etc., in the code - these things are taking place, of course, just “behind the scenes” in optimized, pre-compiled C code. Vectorized code has many advantages, among which are:
-
-* vectorized code is more concise and easier to read
-* fewer lines of code generally means fewer bugs
-* the code more closely resembles standard mathematical notation (making it easier, typically, to correctly code mathematical constructs)
-* vectorization results in more “Pythonic” code. Without vectorization, our code would be littered with inefficient and difficult to read for loops.
-
-[NEXT]
-## Vectorisation for Trading Simulation
+Process of rewriting your code to express calculations in array/matrix form.
 
 [NEXT]
 <!-- .slide: class="large-slide" -->
-We already got vectorisation for free.
+Often easy to rewrite....
 
 [NEXT]
 <!-- .slide: class="large-slide" -->
-Using native NumPy operations often vectorises the code already.
+...but not always.
 
 [NEXT]
 <!-- .slide: class="large-slide" -->
-But not always...
-
-[NEXT]
-<!-- .slide: class="large-slide" -->
-You might need to rewrite your algorithm.
+You might need to completely redesign your algorithms.
 
 This is **non-trivial**.
 
@@ -1259,7 +1199,7 @@ Not all algorithms are vectorisable.
 
 
 [NEXT SECTION]
-## 5. Numba
+## 4. Numba
 ![numba](images/numba.png)
 
 _note_
@@ -1287,16 +1227,8 @@ Compiles them to optimised machine code at runtime.
 
 **Just-in-time (JIT)** compilation.
 
-**LLVM** for compiling to machine instructions.
-
 _note_
 Numba gives you the power to speed up your applications with high performance functions written directly in Python. With a few annotations, array-oriented and math-heavy Python code can be just-in-time compiled to native machine instructions, similar in performance to C, C++ and Fortran, without having to switch languages or Python interpreters.
-
-[NEXT]
-<!-- .slide: class="medium-slide" -->
-<code style="font-size: 80px">numba.jit</code>
-
-Decorator that tells Numba to compile a function to native instructions.
 
 [NEXT]
 ## Example
@@ -1353,18 +1285,20 @@ def sum_array(arr: List[int]):
 </code></pre>
 
 [NEXT]
-### Drawbacks
+# This is Not Magic!
 
-* Numba type inference sometimes fails
-* You might need to specify types manually
-  - arguably makes code more verbose / harder to read
-* Restricted language features using `nopython=True`
-  - variable types are fixed
-  - cannot use arbitrary classes
+[NEXT]
+Restricted language features using `nopython=True`.
 
-_note_
-Numba FAQ lists many of the drawbacks:
-https://numba.pydata.org/numba-doc/dev/user/faq.html
+Variable types are fixed.
+
+Can't use arbitrary Python objects/classes.
+
+[NEXT]
+<!-- .slide: class="medium-slide" -->
+Only intended for optimising
+
+**compute heavy functions** with long loops!
 
 [NEXT]
 ### Using Numba for Trading Simulation
