@@ -1409,12 +1409,6 @@ Just using `numpy` and `numba`
 alone can yield 1000x speedup.
 
 [NEXT]
-If RAM or disk is your bottleneck, parallelise using a cluster.
-
-Otherwise, you can get **very** far with vectorisation and sprinkling
-`@numba.jit` magic.
-
-[NEXT]
 <!-- .slide: class="medium-slide" -->
 # Link to the Slides
 
