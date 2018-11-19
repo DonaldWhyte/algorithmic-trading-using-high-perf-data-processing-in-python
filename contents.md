@@ -724,50 +724,15 @@ Source for upcoming sections: https://jakevdp.github.io/blog/2014/05/09/why-pyth
 ## Dynamic Typing
 
 [NEXT]
-<!-- .slide: class="medium-slide" -->
-Python's interpreter doesn't know the type of the variables in advance.
-
-[NEXT]
-![python_slow_1](images/python_slow_1.png)
-
-[NEXT]
-More instructions needed for any operation.
-
-**Primary reason** Python is slower than C or other compiled languages
-for processing numerical data.
-
-[NEXT]
 # Reason 2
 ## Interpreted, not Compiled
-
-[NEXT]
-<!-- .slide: class="medium-slide" -->
-Python code is interpreted at **runtime**.
-
-Not compiled.
-
-Compilers are able to **optimise** code in advance.
-
-_note_
-See section 5 to learn see how compiling Python code can dramatically speed up
-code.
 
 [NEXT]
 # Reason 3
 ## Fragmented Memory Access
 
 [NEXT]
-![python_slow_2](images/python_slow_2.png)
-
-[NEXT]
-Bad for code that steps through **data in sequence**.
-
-Iterate through a single list accesses completely different regions of memory.
-
-Not **cache friendly**.
-
-[NEXT]
-## How can we do better?
+# How can we do better?
 
 
 [NEXT SECTION]
@@ -968,47 +933,7 @@ Don't loop through `np.ndarray`s.
 Move the computation to the NumPy/C/native code level where possible.
 
 [NEXT]
-## Problem
-For arrays with the same size, operations are performed element-by-element.
-
-Sometimes we want to apply smaller scalars or vectors to larger arrays.
-
-_e.g. adding one to all elements in an array_
-
-_note_
-We want to use NumPy's built-in operations, but we don't want to perform loads of copies to match up the array sizes.
-
-[NEXT]
-### Adding 1 to an Array
-
-![adding_one_to_array](images/adding_one_to_array.svg)
-
-Adding 1 to **N** elements would take **N -1** copies!
-
-[NEXT]
-### Broadcasting
-Allows us to apply smaller arrays to larger arrays.
-
-**Without copying.**
-
-[NEXT]
-### Broadcasting Scalar to Array
-![broadcasting](images/broadcasting_1d_0.svg)
-
-[NEXT]
-### Broadcasting Scalar to Array
-![broadcasting](images/broadcasting_1d_1.svg)
-
-[NEXT]
-### Broadcasting Vector to Array
-![broadcasting](images/broadcasting_2d_0.svg)
-
-[NEXT]
-### Broadcasting Vector to Array
-![broadcasting](images/broadcasting_2d_1.svg)
-
-[NEXT]
-### Using NumPy for Trading Simulation
+## Using NumPy for Trading Simulation
 
 [NEXT]
 ## Recap
@@ -1048,6 +973,7 @@ Calculate each stock's daily returns for the past year.
   ![returns_equation](images/returns_equation_example.svg)
 </div>
 <!-- .element: class="fragment" data-fragment-index="1" -->
+
 [NEXT]
 <!-- .slide: class="large-slide" -->
 Need to calculate return for all
@@ -1092,8 +1018,7 @@ Lots of copies and slow operations being run in Python code.
 
 [NEXT]
 <!-- .slide: class="large-slide" -->
-Instead of manually calculating each
-cell one-by-one using Python loops...
+Instead of manually calculating each cell one-by-one using Python loops...
 
 [NEXT]
 <!-- .slide: class="large-slide" -->
@@ -1222,12 +1147,6 @@ We use NumPy to perform similar optimisations for the **Correlation** and
 **Decision** steps.
 
 [NEXT]
-<!-- .slide: class="medium-slide" -->
-# Key Takeway
-
-Expressing data in vector/matrix form opens up a new world of optimisations.
-
-[NEXT]
 ## Trading Simulation
 ### Execution Time Breakdown
 
@@ -1247,6 +1166,12 @@ Expressing data in vector/matrix form opens up a new world of optimisations.
 * Operations executed in optimised compiled code
 
 [NEXT]
+<!-- .slide: class="medium-slide" -->
+# Key Takeway
+
+Expressing data in vector/matrix form opens up a new world of optimisations.s
+
+[NEXT]
 # But also...
 
 [NEXT SECTION]
@@ -1264,10 +1189,6 @@ Source: https://software.intel.com/en-us/articles/vectorization-a-key-tool-to-im
 Modern CPUs provide direct support for vector operations.
 
 A **single instruction** is applied to **multiple** data points.
-
-_note_
-TODO: research differences (if any) between vectorisation and pipelining.
-TODO: high-level explanation of CPU layers -- CPUs/pipelines/vectors diagram!!!!!!
 
 [NEXT]
 ### Adding Two Vectors
