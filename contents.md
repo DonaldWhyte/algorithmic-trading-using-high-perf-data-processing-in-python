@@ -755,7 +755,7 @@ Many libraries/frameworks are built on top of NumPy.
   - including CSV
 
 [NEXT]
-`numpy.ndarray`
+<code style="font-size: 70px">numpy.ndarray</code>
 
 * class encapsulating n-dimensional arrays
 * fixed size
@@ -770,7 +770,7 @@ performed in compiled code for performance.
 # Examples
 
 [NEXT]
-### Creating an Array
+## Creating an Array
 
 ```python
 >>> a = np.arange(9, dtype=np.float64)
@@ -801,9 +801,6 @@ of the data in the array and how many elements the array stores for each dimensi
 The `strides` are the number of bytes that should be skipped in memory to go to the next element. If your strides are (32, 8), you need to proceed 8 bytes to get to the next column and 32 bytes to move to the next row.
 
 `flags` is a set of configurable flags we don't need to cover here.
-
-### Python View
-![python_view](images/python_view.svg)
 
 [NEXT]
 ### Reshape
@@ -1169,7 +1166,7 @@ We use NumPy to perform similar optimisations for the **Correlation** and
 <!-- .slide: class="medium-slide" -->
 # Key Takeway
 
-Expressing data in vector/matrix form opens up a new world of optimisations.s
+Expressing data in vector/matrix form opens up a new world of optimisations.
 
 [NEXT]
 # But also...
