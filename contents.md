@@ -70,7 +70,7 @@ Great tools for building prod-ready systems.
 
 [NEXT]
 <!-- .slide: class="large-slide" -->
-We want to use the same code
+We can use the same code
 
 for prod **and** research!
 
@@ -396,11 +396,11 @@ Suppose we have
 
 [NEXT]
 <!-- .slide: class="large-slide" -->
-<span class="profit">2%</span> return on investment.
+Make more right trades than wrong trades and you make money.
 
 [NEXT]
 <!-- .slide: class="large-slide" -->
-Make more right trades than wrong trades and you make money.
+<span class="profit">2%</span> return on investment.
 
 [NEXT]
 <!-- .slide: class="large-slide" -->
@@ -422,6 +422,11 @@ legit reasons, e.g. the stock market has gone down as a whole (recession),
 so if you buy when it dips it NEVER bounces back and you've lost money .
 
 [NEXT]
+<!-- .slide: class="large-slide" -->
+# Goal
+Avoid trading during momentum phases.
+
+[NEXT]
 # 2. Stocks are Correlated
 
 [NEXT]
@@ -436,8 +441,7 @@ so if you buy when it dips it NEVER bounces back and you've lost money .
 
 [NEXT]
 <!-- .slide: class="large-slide" -->
-# Goal
-Avoid trading during momentum phases by considering **stock correlation** in trading decisions.
+Use **stock correlations** to detect momentum phases.
 
 [NEXT]
 <!-- .slide: class="large-slide" -->
