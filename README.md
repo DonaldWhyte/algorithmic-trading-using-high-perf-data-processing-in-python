@@ -12,6 +12,10 @@ Topics covered:
 * vectorisation
 * using `numba` to optimise non-vectorised code
 
+## Data
+
+The stock price/volume data used by the simulations discussed in the talk are from [**this Kaggle dataset**](https://www.kaggle.com/borismarjanovic/price-volume-data-for-all-us-stocks-etfs).
+
 ## Running Presentation
 
 You can also run the presentation on a local web server. Clone this repository and run the presentation like so:
